@@ -2382,5 +2382,233 @@
       }
     });
   </script>
+  <!-- CHAT WIDGET (everything from here to </body> is left out of the assistant's knowledge) -->
+  <div id="chat-widget" class="hidden fixed bottom-5 right-5 z-50 font-sans">
+    <button
+      id="chat-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="chat-panel"
+      class="ml-auto flex items-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-medium text-ivory shadow-lg ring-1 ring-gold/40 hover:bg-forestHover transition-colors"
+    >
+      <span class="inline-block h-2 w-2 rounded-full bg-goldLight"></span>
+      <span id="chat-toggle-label">Ask a question</span>
+    </button>
+
+    <section
+      id="chat-panel"
+      aria-label="Website assistant"
+      class="hidden absolute bottom-14 right-0 w-[calc(100vw-2.5rem)] max-w-sm rounded-2xl bg-ivory text-charcoal shadow-2xl ring-1 ring-hairline overflow-hidden flex flex-col"
+      style="max-height: min(34rem, calc(100vh - 6rem))"
+    >
+      <header class="bg-forest text-ivory px-5 py-4">
+        <p class="font-editorial text-xl leading-tight">Ask a question</p>
+        <p class="mt-1 text-xs text-ivory/75">
+          Automated assistant. General information only, not financial advice.
+        </p>
+      </header>
+
+      <!-- Step 1: details before the chat starts -->
+      <div id="chat-gate" class="p-5 space-y-3 overflow-y-auto">
+        <p class="text-sm text-stone">
+          Tell us who you are so Corie can follow up, then ask away.
+        </p>
+        <div>
+          <label for="chat-name" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1">Name</label>
+          <input id="chat-name" type="text" autocomplete="name" maxlength="120"
+            class="w-full rounded-xl border border-hairline bg-alabaster/45 px-3 py-2.5 text-sm focus:outline-none focus:border-forest" />
+        </div>
+        <div>
+          <label for="chat-contact" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1">Email or phone</label>
+          <input id="chat-contact" type="text" autocomplete="email" maxlength="200"
+            class="w-full rounded-xl border border-hairline bg-alabaster/45 px-3 py-2.5 text-sm focus:outline-none focus:border-forest" />
+        </div>
+        <label class="flex items-start gap-2 text-xs text-stone">
+          <input id="chat-consent" type="checkbox" class="mt-0.5 accent-forest" />
+          <span>I agree that Corie Anne del Carmen may contact me about this enquiry.</span>
+        </label>
+        <p id="chat-gate-error" role="alert" class="hidden text-xs text-red-700"></p>
+        <button id="chat-start" type="button"
+          class="w-full rounded-full bg-forest py-2.5 text-sm font-medium text-ivory hover:bg-forestHover transition-colors">
+          Start chat
+        </button>
+        <p class="text-[11px] leading-snug text-stone/80">
+          Your messages are processed by an AI service (Anthropic) to produce answers. Please don’t share account numbers, your SIN, or other sensitive details here.
+        </p>
+      </div>
+
+      <!-- Step 2: the conversation -->
+      <div id="chat-thread" class="hidden flex-1 min-h-0 flex-col">
+        <div id="chat-messages" aria-live="polite" class="flex-1 min-h-0 overflow-y-auto p-4 space-y-3 text-sm"></div>
+        <div class="border-t border-hairline p-3 flex items-end gap-2">
+          <textarea id="chat-input" rows="1" maxlength="1000" placeholder="Type your question…"
+            class="flex-1 resize-none rounded-xl border border-hairline bg-alabaster/45 px-3 py-2.5 text-sm focus:outline-none focus:border-forest"></textarea>
+          <button id="chat-send" type="button"
+            class="rounded-full bg-forest px-4 py-2.5 text-sm font-medium text-ivory hover:bg-forestHover transition-colors disabled:opacity-50">
+            Send
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // =========================================================
+    // CHAT ASSISTANT WIDGET
+    // =========================================================
+    (function () {
+      var MAX_TURNS = 24; // must match MAX_MESSAGES in lib/chat-config.ts
+      var widget = document.getElementById("chat-widget");
+      var toggle = document.getElementById("chat-toggle");
+      var toggleLabel = document.getElementById("chat-toggle-label");
+      var panel = document.getElementById("chat-panel");
+      var gate = document.getElementById("chat-gate");
+      var gateError = document.getElementById("chat-gate-error");
+      var thread = document.getElementById("chat-thread");
+      var list = document.getElementById("chat-messages");
+      var input = document.getElementById("chat-input");
+      var sendBtn = document.getElementById("chat-send");
+
+      var turns = [];      // settled {role, content} pairs: what the server gets
+      var lead = null;     // details from the gate
+      var leadTries = 0;   // lead is sent until delivered, at most twice
+      var leadDone = false;
+      var busy = false;
+
+      // Show the button only while the assistant is switched on.
+      fetch("/api/chat")
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d && d.enabled) widget.classList.remove("hidden"); })
+        .catch(function () {});
+
+      toggle.addEventListener("click", function () {
+        var open = panel.classList.toggle("hidden") === false;
+        toggle.setAttribute("aria-expanded", String(open));
+        toggleLabel.textContent = open ? "Close" : "Ask a question";
+        if (open) (lead ? input : document.getElementById("chat-name")).focus();
+      });
+
+      function bubble(role, text) {
+        var el = document.createElement("div");
+        el.className =
+          role === "user"
+            ? "ml-8 rounded-2xl rounded-br-sm bg-forest text-ivory px-3.5 py-2.5 whitespace-pre-wrap break-words"
+            : role === "note"
+              ? "rounded-xl border border-gold/50 bg-alabaster px-3.5 py-2.5 text-xs text-forest whitespace-pre-wrap"
+              : "mr-8 rounded-2xl rounded-bl-sm bg-alabaster px-3.5 py-2.5 whitespace-pre-wrap break-words";
+        el.textContent = text; // textContent only: nothing is ever rendered as HTML
+        list.appendChild(el);
+        list.scrollTop = list.scrollHeight;
+        return el;
+      }
+
+      document.getElementById("chat-start").addEventListener("click", function () {
+        var name = document.getElementById("chat-name").value.trim();
+        var contact = document.getElementById("chat-contact").value.trim();
+        var consent = document.getElementById("chat-consent").checked;
+        var digits = contact.replace(/\D/g, "").length;
+        var okContact = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact) || (digits >= 10 && digits <= 15);
+        var error = !name ? "Please enter your name."
+          : !okContact ? "Please enter a valid email address or phone number."
+          : !consent ? "Please agree to be contacted so we can reply."
+          : "";
+        if (error) {
+          gateError.textContent = error;
+          gateError.classList.remove("hidden");
+          return;
+        }
+        lead = { name: name, contact: contact, consent: true };
+        gate.classList.add("hidden");
+        thread.classList.remove("hidden");
+        thread.classList.add("flex");
+        bubble("assistant", "Hello! I can explain Corie’s services, the account types on this site, and how to book a consultation. What would you like to know?");
+        input.focus();
+      });
+
+      function payloadTurns(question) {
+        var all = turns.concat([{ role: "user", content: question }]);
+        var drop = Math.max(0, all.length - MAX_TURNS);
+        if (drop % 2 !== 0) drop += 1; // keep it starting on a visitor turn
+        return all.slice(drop);
+      }
+
+      async function send() {
+        var question = input.value.trim();
+        if (!question || busy) return;
+        busy = true;
+        sendBtn.disabled = true;
+        input.value = "";
+        var asked = bubble("user", question);
+        var reply = bubble("assistant", "…");
+        var answer = "";
+        var note = "";
+
+        var body = { messages: payloadTurns(question) };
+        var sendingLead = !leadDone && leadTries < 2;
+        if (sendingLead) { body.lead = lead; leadTries += 1; }
+
+        try {
+          var res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          });
+          if (!res.ok || !res.body) {
+            var data = await res.json().catch(function () { return {}; });
+            throw new Error(data.error || "Something went wrong. Please try again.");
+          }
+
+          var reader = res.body.getReader();
+          var decoder = new TextDecoder();
+          var buffer = "";
+          var stop = false;
+          while (!stop) {
+            var chunk = await reader.read();
+            if (chunk.done) break;
+            buffer += decoder.decode(chunk.value, { stream: true });
+            var frames = buffer.split("\n\n");
+            buffer = frames.pop();
+            for (var i = 0; i < frames.length; i++) {
+              var ev = /^event: (.*)$/m.exec(frames[i]);
+              var da = /^data: (.*)$/m.exec(frames[i]);
+              if (!ev || !da) continue;
+              var payload = JSON.parse(da[1]);
+              if (ev[1] === "delta") {
+                answer += payload.text;
+                reply.textContent = answer;
+                list.scrollTop = list.scrollHeight;
+              } else if (ev[1] === "lead") {
+                if (payload.ok) leadDone = true;
+                else if (leadTries >= 2) note = "We couldn’t pass your details to Corie just now. Please email corie@delcarmen.ca so she can follow up.";
+              } else if (ev[1] === "error") {
+                note = payload.message;
+                stop = true;
+              }
+            }
+          }
+        } catch (err) {
+          note = (err && err.message) || "Something went wrong. Please try again.";
+        }
+
+        if (answer.trim()) {
+          // Keep both turns, even a partial answer, so the history alternates.
+          turns.push({ role: "user", content: question }, { role: "assistant", content: answer });
+        } else {
+          reply.remove();
+          asked.remove();
+          input.value = question; // nothing came back: give the question back
+        }
+        if (note) bubble("note", note);
+        busy = false;
+        sendBtn.disabled = false;
+        input.focus();
+      }
+
+      sendBtn.addEventListener("click", send);
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
+      });
+    })();
+  </script>
 </body>
 </html>
