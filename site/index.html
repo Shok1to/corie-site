@@ -1860,6 +1860,10 @@
         <!-- Right Consultation Request Form -->
         <div class="lg:col-span-7 bg-ivory text-charcoal rounded-2xl p-6 sm:p-8">
           <form id="consultation-form" class="space-y-4">
+            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1.5">
@@ -1932,11 +1936,18 @@
             </div>
 
             <button
+              id="form-submit"
               type="submit"
               class="w-full rounded-full bg-forest py-3.5 px-6 text-sm font-medium text-ivory hover:bg-forestHover transition-colors shadow-sm"
             >
               Request a Discovery Consultation
             </button>
+
+            <div
+              id="form-error"
+              role="alert"
+              class="hidden rounded-xl bg-red-50 border border-red-300 p-4 text-xs sm:text-sm text-red-800"
+            ></div>
 
             <div
               id="form-confirmation"
@@ -2336,10 +2347,39 @@
     // =========================================================
     const consultationForm = document.getElementById("consultation-form");
     const formConfirmation = document.getElementById("form-confirmation");
-    consultationForm.addEventListener("submit", (e) => {
+    const formError = document.getElementById("form-error");
+    const formSubmit = document.getElementById("form-submit");
+    consultationForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      formConfirmation.classList.remove("hidden");
-      consultationForm.reset();
+      formConfirmation.classList.add("hidden");
+      formError.classList.add("hidden");
+      const label = formSubmit.textContent;
+      formSubmit.disabled = true;
+      formSubmit.textContent = "Sending…";
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: document.getElementById("fullName").value,
+            email: document.getElementById("email").value,
+            focus: document.getElementById("focusArea").value,
+            notes: document.getElementById("notes").value,
+            company: document.getElementById("company").value,
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) throw new Error(data.error || "Something went wrong.");
+        formConfirmation.classList.remove("hidden");
+        consultationForm.reset();
+      } catch (err) {
+        formError.textContent = (err && err.message ? err.message : "Something went wrong.") +
+          " You can also email corie@delcarmen.ca directly.";
+        formError.classList.remove("hidden");
+      } finally {
+        formSubmit.disabled = false;
+        formSubmit.textContent = label;
+      }
     });
   </script>
 </body>
