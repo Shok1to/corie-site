@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corie Anne del Carmen — Financial Advisory &amp; Wealth Planning | delcarmen.ca</title>
+  <meta
+    name="description"
+    content="Thoughtful financial advisory by Corie Anne del Carmen in North York, Ontario. Insurance, investments (RRSP, FHSA, TFSA, Non-Registered), estate, and tax planning."
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: "#FAF8F5",
+            alabaster: "#F3EFE9",
+            forest: "#1E352F",
+            forestHover: "#29473F",
+            gold: "#B5894C",
+            goldLight: "#CFA86E",
+            charcoal: "#1C1B19",
+            stone: "#5C5852",
+            hairline: "#E5DFD5",
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+            sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #1C1B19;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-editorial {
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+    .card-lift {
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.25s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 38px -16px rgba(30, 53, 47, 0.12);
+    }
+    input[type="range"] {
+      accent-color: #1E352F;
+    }
+    .view-panel {
+      animation: fadePanel 0.3s ease-out;
+    }
+    @keyframes fadePanel {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D6CEC2;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-ivory text-charcoal selection:bg-forest selection:text-ivory">
+  <!-- =========================================================
+       STICKY NAVIGATION HEADER (delcarmen.ca)
+  ========================================================== -->
+  <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-hairline">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Brand Identity -->
+      <a
+        href="#overview"
+        data-nav-view="home"
+        class="flex flex-col group focus:outline-none"
+      >
+        <span class="font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-forest leading-none">
+          Corie Anne del Carmen
+        </span>
+        <span class="text-[11px] uppercase tracking-[0.2em] text-gold mt-1 font-semibold">
+          delcarmen.ca · Financial Advisory
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-6 text-sm text-stone">
+        <a
+          href="#overview"
+          data-nav-view="home"
+          data-nav-target="top"
+          class="nav-link font-semibold text-forest transition-colors"
+        >
+          Overview
+        </a>
+        <a
+          href="#first-step"
+          data-nav-view="home"
+          data-nav-target="first-step"
+          class="nav-link hover:text-forest transition-colors"
+        >
+          Where to Begin
+        </a>
+        <a
+          href="#services"
+          data-nav-view="home"
+          data-nav-target="services"
+          class="nav-link hover:text-forest transition-colors"
+        >
+          Four Disciplines
+        </a>
+        <a
+          href="#products"
+          data-nav-view="products"
+          class="nav-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-alabaster border border-hairline text-forest font-medium hover:border-gold transition-colors"
+        >
+          <span>Investment Products</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+        </a>
+        <a
+          href="#about"
+          data-nav-view="home"
+          data-nav-target="about"
+          class="nav-link hover:text-forest transition-colors"
+        >
+          About &amp; Process
+        </a>
+        <a
+          href="#faq"
+          data-nav-view="home"
+          data-nav-target="faq"
+          class="nav-link hover:text-forest transition-colors"
+        >
+          FAQ
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2.5">
+        <a
+          href="#contact"
+          data-book-link="true"
+          class="inline-flex items-center justify-center rounded-full bg-forest px-5 py-2.5 text-xs sm:text-sm font-medium text-ivory hover:bg-forestHover transition-colors shadow-sm"
+        >
+          Book a Consultation
+        </a>
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-label="Open Navigation Menu"
+          aria-expanded="false"
+          class="lg:hidden p-2.5 rounded-xl border border-hairline text-forest hover:bg-alabaster"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-hairline bg-ivory px-6 py-5 space-y-2.5">
+      <a href="#overview" data-nav-view="home" data-nav-target="top" class="block py-2 text-sm font-semibold text-forest">
+        Overview — Advisory Practice
+      </a>
+      <a href="#first-step" data-nav-view="home" data-nav-target="first-step" class="block py-2 text-sm text-stone hover:text-forest">
+        Where to Begin (First-Meeting Readiness)
+      </a>
+      <a href="#services" data-nav-view="home" data-nav-target="services" class="block py-2 text-sm text-stone hover:text-forest">
+        Four Disciplines (Insurance First)
+      </a>
+      <a href="#products" data-nav-view="products" class="block py-2 text-sm font-semibold text-gold">
+        Investment Products &amp; RRSP at Retirement →
+      </a>
+      <a href="#about" data-nav-view="home" data-nav-target="about" class="block py-2 text-sm text-stone hover:text-forest">
+        About Corie &amp; How We Work
+      </a>
+      <a href="#faq" data-nav-view="home" data-nav-target="faq" class="block py-2 text-sm text-stone hover:text-forest">
+        Common Questions (FAQ)
+      </a>
+      <div class="pt-2 border-t border-hairline">
+        <a
+          href="#contact"
+          data-book-link="true"
+          class="inline-flex w-full items-center justify-center rounded-full bg-forest px-5 py-3 text-sm font-medium text-ivory"
+        >
+          Book a Consultation
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       VIEW 1: HOME / ADVISORY PRACTICE (delcarmen.ca)
+  ========================================================== -->
+  <div id="view-home" class="view-panel">
+    <main id="top">
+      <!-- 1. HERO SECTION -->
+      <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+            <!-- Left Copy -->
+            <div class="lg:col-span-12 space-y-7">
+              <h1 class="max-w-4xl font-editorial text-4xl sm:text-5xl lg:text-[58px] font-normal text-forest leading-[1.08] tracking-tight">
+                Building a life where <em class="italic font-normal text-gold">money works</em> for you starts with the right guidance.
+              </h1>
+
+              <p class="text-base sm:text-lg text-stone leading-relaxed max-w-2xl font-light">
+                Navigating insurance protection, investments, estate wishes, and tax rules alone leaves too much to guesswork. A dedicated financial advisor helps you see the complete picture, safeguard against blind spots, and turn scattered accounts into one coordinated plan. Over a decade of practice, one principle has guided every client: <span class="text-charcoal font-normal">good advice should give you clarity and choices.</span>
+              </p>
+
+              <!-- Primary & Secondary CTAs -->
+              <div class="flex flex-wrap items-center gap-3.5 pt-1">
+                <a
+                  href="#contact"
+                  class="inline-flex items-center justify-center rounded-full bg-forest px-7 py-3.5 text-sm font-medium text-ivory hover:bg-forestHover transition-all shadow-sm"
+                >
+                  Book a consultation
+                </a>
+                <a
+                  href="#first-step"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border border-forest/25 bg-ivory px-6 py-3.5 text-sm font-medium text-forest hover:bg-alabaster transition-all"
+                >
+                  <span>How to prepare</span>
+                  <span class="text-gold">↓</span>
+                </a>
+                <button
+                  type="button"
+                  data-switch-view="products"
+                  class="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gold hover:text-forest transition-colors"
+                >
+                  <span>Explore Investment Products</span>
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+
+              <!-- Reassurance Strip -->
+              <div class="pt-4 border-t border-hairline flex flex-wrap items-center gap-x-8 gap-y-2 text-xs text-stone">
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  No products pitched in your first meeting
+                </span>
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  North York &amp; Greater Toronto Area
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. STATS / TRUST STRIP -->
+      <section aria-label="Practice Highlights" class="bg-forest text-ivory border-y border-forestHover">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 sm:py-12">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+            <div class="border-l border-gold/50 pl-4 sm:pl-5">
+              <div class="font-editorial text-3xl sm:text-4xl font-medium text-ivory">10+</div>
+              <div class="text-xs sm:text-sm text-ivory/75 mt-1">Years in advisory practice</div>
+            </div>
+            <div class="border-l border-gold/50 pl-4 sm:pl-5">
+              <div class="font-editorial text-3xl sm:text-4xl font-medium text-ivory">Four</div>
+              <div class="text-xs sm:text-sm text-ivory/75 mt-1">Core planning disciplines</div>
+            </div>
+            <div class="border-l border-gold/50 pl-4 sm:pl-5">
+              <div class="font-editorial text-3xl sm:text-4xl font-medium text-ivory">1</div>
+              <div class="text-xs sm:text-sm text-ivory/75 mt-1">Coordinated, goal-driven plan</div>
+            </div>
+            <div class="border-l border-gold/50 pl-4 sm:pl-5">
+              <div class="font-editorial text-3xl sm:text-4xl font-medium text-goldLight">Client-First</div>
+              <div class="text-xs sm:text-sm text-ivory/75 mt-1">Transparent, objective guidance</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. WHERE GOOD ADVICE BEGINS (#first-step — Interactive First-Meeting Readiness) -->
+      <section id="first-step" class="py-20 sm:py-28 bg-alabaster/75 border-b border-hairline">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="max-w-3xl">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Where Good Advice Begins
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
+              The right advisory partnership starts with knowing where you stand—and where you want to go.
+            </h2>
+            <p class="text-base sm:text-lg text-stone mt-5 leading-relaxed font-light">
+              Working with a financial advisor brings objectivity, structure, and long-term accountability to your financial life. Yet the most important first step—before or during our work together—is to assess your current financial picture and clearly define your short- and long-term goals.
+            </p>
+          </div>
+
+          <!-- Interactive First-Meeting Readiness Tracker -->
+          <div class="mt-10 rounded-2xl bg-ivory border border-hairline p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="text-xs font-semibold uppercase tracking-wider text-forest">
+                  First-Meeting Readiness Check
+                </span>
+                <span
+                  id="readiness-badge"
+                  class="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-alabaster text-stone border border-hairline"
+                >
+                  0 of 4 Completed
+                </span>
+              </div>
+              <p id="readiness-message" class="text-xs sm:text-sm text-stone">
+                Select each action card below as you complete it to prepare for your discovery conversation.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-4 min-w-[210px]">
+              <div class="w-full bg-hairline h-2 rounded-full overflow-hidden">
+                <div
+                  id="readiness-bar"
+                  class="bg-forest h-full rounded-full transition-all duration-300"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <button
+                id="reset-checklist-btn"
+                type="button"
+                class="hidden text-xs text-gold hover:text-forest underline whitespace-nowrap"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Four Preparation Action Cards -->
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
+            <!-- 01 -->
+            <div
+              data-step-card="1"
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              class="step-card card-lift cursor-pointer rounded-2xl bg-ivory border border-hairline p-7 sm:p-8 flex flex-col justify-between select-none"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-4">
+                  <span class="font-editorial text-3xl font-medium text-gold">01</span>
+                  <span class="check-pill inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border border-hairline text-stone bg-alabaster/70 transition-colors">
+                    <span class="check-dot w-2 h-2 rounded-full bg-hairline"></span>
+                    <span class="check-label">Mark ready</span>
+                  </span>
+                </div>
+                <h3 class="font-editorial text-2xl sm:text-[27px] font-medium text-forest mt-4">
+                  Conduct a Financial Self-Checkup
+                </h3>
+                <p class="text-sm sm:text-[15px] text-stone leading-relaxed mt-3">
+                  Calculate your net worth by listing all your current assets—such as cash savings, investments, and property—alongside your liabilities, including mortgages, credit balances, and loans.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs text-stone">
+                <span>Net Worth: <strong class="font-medium text-forest">Total Assets − Total Liabilities</strong></span>
+                <span class="text-gold font-medium">Baseline Snapshot</span>
+              </div>
+            </div>
+
+            <!-- 02 -->
+            <div
+              data-step-card="2"
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              class="step-card card-lift cursor-pointer rounded-2xl bg-ivory border border-hairline p-7 sm:p-8 flex flex-col justify-between select-none"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-4">
+                  <span class="font-editorial text-3xl font-medium text-gold">02</span>
+                  <span class="check-pill inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border border-hairline text-stone bg-alabaster/70 transition-colors">
+                    <span class="check-dot w-2 h-2 rounded-full bg-hairline"></span>
+                    <span class="check-label">Mark ready</span>
+                  </span>
+                </div>
+                <h3 class="font-editorial text-2xl sm:text-[27px] font-medium text-forest mt-4">
+                  Identify Your Goals
+                </h3>
+                <p class="text-sm sm:text-[15px] text-stone leading-relaxed mt-3">
+                  Determine what you want your money to do—such as building an emergency fund, paying off high-interest debt, saving for a home, or planning for retirement—so every decision has a clear purpose.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs text-stone">
+                <span>Horizons: <strong class="font-medium text-forest">Short-, Medium- &amp; Long-Term</strong></span>
+                <span class="text-gold font-medium">Clarity of Purpose</span>
+              </div>
+            </div>
+
+            <!-- 03 -->
+            <div
+              data-step-card="3"
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              class="step-card card-lift cursor-pointer rounded-2xl bg-ivory border border-hairline p-7 sm:p-8 flex flex-col justify-between select-none"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-4">
+                  <span class="font-editorial text-3xl font-medium text-gold">03</span>
+                  <span class="check-pill inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border border-hairline text-stone bg-alabaster/70 transition-colors">
+                    <span class="check-dot w-2 h-2 rounded-full bg-hairline"></span>
+                    <span class="check-label">Mark ready</span>
+                  </span>
+                </div>
+                <h3 class="font-editorial text-2xl sm:text-[27px] font-medium text-forest mt-4">
+                  Gather Your Documents
+                </h3>
+                <p class="text-sm sm:text-[15px] text-stone leading-relaxed mt-3">
+                  Collect key paperwork like tax returns, pay stubs, bank and investment statements, and existing insurance policies so your advisor has an accurate, complete baseline rather than rough estimates.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs text-stone">
+                <span>Paperwork: <strong class="font-medium text-forest">Tax Returns, Statements, Policies</strong></span>
+                <span class="text-gold font-medium">Accurate Baseline</span>
+              </div>
+            </div>
+
+            <!-- 04 -->
+            <div
+              data-step-card="4"
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              class="step-card card-lift cursor-pointer rounded-2xl bg-ivory border border-hairline p-7 sm:p-8 flex flex-col justify-between select-none"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-4">
+                  <span class="font-editorial text-3xl font-medium text-gold">04</span>
+                  <span class="check-pill inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border border-hairline text-stone bg-alabaster/70 transition-colors">
+                    <span class="check-dot w-2 h-2 rounded-full bg-hairline"></span>
+                    <span class="check-label">Mark ready</span>
+                  </span>
+                </div>
+                <h3 class="font-editorial text-2xl sm:text-[27px] font-medium text-forest mt-4">
+                  Define Your Advisor’s Role
+                </h3>
+                <p class="text-sm sm:text-[15px] text-stone leading-relaxed mt-3">
+                  Use your initial discovery meeting to discuss fees, credentials, and fiduciary commitment—ensuring your advisor is dedicated to putting your best interests first from day one.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs text-stone">
+                <span>Transparency: <strong class="font-medium text-forest">Fees, Credentials &amp; Duty</strong></span>
+                <span class="text-gold font-medium">Aligned Partnership</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-9 pt-6 border-t border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <p class="text-sm text-stone">
+              Still gathering paperwork? Start with what you have today—we organize the rest together during discovery.
+            </p>
+            <a href="#contact" class="text-sm font-semibold text-forest hover:text-gold transition-colors whitespace-nowrap">
+              Schedule your initial discovery meeting →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. FOUR DISCIPLINES (#services — Insurance First!) -->
+      <section id="services" class="py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="max-w-2xl">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Four Disciplines · Protection First
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
+              One coordinated plan built on a protective foundation.
+            </h2>
+            <p class="text-base text-stone mt-4 leading-relaxed font-light">
+              Every financial decision touches another. Sound insurance protection comes first—safeguarding your family’s income and business continuity so your investments, estate wishes, and tax strategies can compound uninterrupted.
+            </p>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-7">
+            <!-- Pillar I: Insurance -->
+            <div class="card-lift rounded-3xl bg-forest text-ivory p-7 sm:p-9 flex flex-col justify-between shadow-md">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.18em] text-goldLight font-semibold">
+                    Pillar I · Protective Foundation
+                  </span>
+                  <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-ivory/15 text-ivory">
+                    Starts Here
+                  </span>
+                </div>
+                <h3 class="font-editorial text-3xl font-medium mt-3">Insurance</h3>
+                <p class="text-sm text-ivory/85 leading-relaxed mt-3">
+                  Objective risk management structured to protect the people and obligations that depend on your earning power before unexpected events force difficult financial choices.
+                </p>
+                <ul class="mt-5 space-y-2.5 text-sm text-ivory/85">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-goldLight mt-2 shrink-0"></span>
+                    <span>Life &amp; disability income protection</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-goldLight mt-2 shrink-0"></span>
+                    <span>Critical illness &amp; long-term care coverage</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-goldLight mt-2 shrink-0"></span>
+                    <span>Comprehensive needs analysis &amp; existing policy audit</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-goldLight mt-2 shrink-0"></span>
+                    <span>Business owner, buy-sell &amp; key-person protection</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-4 border-t border-ivory/15 flex items-center justify-between text-xs">
+                <span class="text-goldLight">Safeguarding family &amp; corporate continuity</span>
+                <a href="#contact" data-prefill-focus="Insurance & Family Risk Protection" class="font-semibold text-ivory hover:text-goldLight">
+                  Review coverage →
+                </a>
+              </div>
+            </div>
+
+            <!-- Pillar II: Investments -->
+            <div class="card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">
+                    Pillar II · Wealth Accumulation
+                  </span>
+                  <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-ivory border border-hairline text-forest">
+                    RRSP · FHSA · TFSA · Non-Reg
+                  </span>
+                </div>
+                <h3 class="font-editorial text-3xl font-medium text-forest mt-3">Investments</h3>
+                <p class="text-sm text-stone leading-relaxed mt-3">
+                  Evidence-based portfolios calibrated to your horizon, risk tolerance, and cash-flow needs—coordinating registered and non-registered accounts for after-tax growth.
+                </p>
+                <ul class="mt-5 space-y-2.5 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Goal-based portfolio design &amp; asset allocation</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Retirement income planning &amp; RRSP-to-RRIF transition</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Registered account strategy (RRSP, FHSA, TFSA &amp; Non-Registered)</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Disciplined, regular portfolio rebalancing</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-stone">Explore Canadian account rules &amp; RRIF tools</span>
+                <button
+                  type="button"
+                  data-switch-view="products"
+                  class="inline-flex items-center gap-1.5 rounded-full bg-forest px-4 py-2 text-xs font-medium text-ivory hover:bg-forestHover transition-colors"
+                >
+                  <span>Open Investment Products</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Pillar III: Estate Planning -->
+            <div class="card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between">
+              <div>
+                <span class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">
+                  Pillar III · Legacy &amp; Continuity
+                </span>
+                <h3 class="font-editorial text-3xl font-medium text-forest mt-3">Estate Planning</h3>
+                <p class="text-sm text-stone leading-relaxed mt-3">
+                  Thoughtful preparation so your assets, family responsibilities, and charitable wishes transfer smoothly with minimal administrative friction and tax erosion.
+                </p>
+                <ul class="mt-5 space-y-2.5 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Wills &amp; registered account beneficiary designation audits</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Powers of attorney for property &amp; personal care</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Guardianship &amp; multi-generational family transition planning</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Direct coordination with wills &amp; estates legal counsel</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+                <span class="text-stone">Aligned with your legal &amp; family directives</span>
+                <a href="#contact" data-prefill-focus="Estate & Legacy Planning" class="font-semibold text-forest hover:text-gold">
+                  Discuss estate wishes →
+                </a>
+              </div>
+            </div>
+
+            <!-- Pillar IV: Tax Planning -->
+            <div class="card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between">
+              <div>
+                <span class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">
+                  Pillar IV · After-Tax Efficiency
+                </span>
+                <h3 class="font-editorial text-3xl font-medium text-forest mt-3">Tax Planning</h3>
+                <p class="text-sm text-stone leading-relaxed mt-3">
+                  Proactive structuring across accumulation and retirement drawdown years so more of your capital stays compounding for your household rather than lost to avoidable tax drag.
+                </p>
+                <ul class="mt-5 space-y-2.5 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Retirement income &amp; withdrawal sequencing (RRIF, TFSA, Non-Reg)</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Tax-efficient asset location across account types</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Incorporated professional &amp; business owner wealth planning</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span>Collaborative planning alongside your CPA / accountant</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+                <span class="text-stone">Designed to complement your accountant’s filings</span>
+                <a href="#contact" data-prefill-focus="Tax & Corporate Wealth Structuring" class="font-semibold text-forest hover:text-gold">
+                  Explore tax strategy →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SPECIALIST NETWORK ("Our Team") -->
+      <section class="py-20 sm:py-24 bg-alabaster/65 border-y border-hairline">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="max-w-2xl">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Our Extended Team
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
+              One trusted point of contact, backed by deep specialists.
+            </h2>
+            <p class="text-base text-stone mt-4 leading-relaxed font-light">
+              Corie remains your single, consistent advisor—coordinating directly with vetted specialists whenever your plan calls for specialized technical execution.
+            </p>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="rounded-2xl bg-ivory border border-hairline p-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-gold">01 · Protection</div>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-1.5">Insurance Specialists</h3>
+              <p class="text-sm text-stone mt-2 leading-relaxed">
+                Advanced underwriting, corporate-owned life insurance, and complex disability or estate liquidity structuring.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-gold">02 · Markets</div>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-1.5">Investment Strategists</h3>
+              <p class="text-sm text-stone mt-2 leading-relaxed">
+                Institutional portfolio research, fixed-income laddering, and disciplined risk-adjusted asset allocation.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-gold">03 · Legal</div>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-1.5">Estate &amp; Legal Partners</h3>
+              <p class="text-sm text-stone mt-2 leading-relaxed">
+                Wills, powers of attorney, family trusts, and shareholder agreements drafted with specialized counsel.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-gold">04 · Accounting</div>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-1.5">Tax Professionals</h3>
+              <p class="text-sm text-stone mt-2 leading-relaxed">
+                Seamless collaboration with your CPA on corporate surplus extraction, estate freezes, and year-end tax planning.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-gold">05 · Longevity</div>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-1.5">Retirement Planners</h3>
+              <p class="text-sm text-stone mt-2 leading-relaxed">
+                CPP/OAS timing optimization, pension income splitting, and sustainable RRIF/annuity income modeling.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-gold">06 · Enterprise</div>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-1.5">Business Advisors</h3>
+              <p class="text-sm text-stone mt-2 leading-relaxed">
+                Succession readiness, executive benefit programs, and business valuation alignment for Ontario entrepreneurs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. ABOUT CORIE (#about) -->
+      <section id="about" class="py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Portrait Card -->
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl bg-alabaster border border-hairline p-5 sm:p-6 shadow-sm">
+                <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-ivory border border-hairline">
+                  <img
+                    src="/assets/corie-anne-del-carmen.jpg"
+                    alt="Corie Anne del Carmen"
+                    onerror="this.onerror=null;this.src='https://placehold.co/480x600/1E352F/FAF8F5?text=Corie+Anne+del+Carmen';"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div class="mt-5 flex items-center justify-between gap-4">
+                  <div>
+                    <h3 class="font-editorial text-2xl font-medium text-forest">Corie Anne del Carmen</h3>
+                    <p class="text-xs uppercase tracking-wider text-gold font-semibold mt-0.5">
+                      Principal Financial Advisor
+                    </p>
+                  </div>
+                  <span class="text-xs px-3 py-1 rounded-full bg-ivory border border-hairline text-stone">
+                    North York, ON
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bio & Philosophy -->
+            <div class="lg:col-span-7 space-y-6">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+                About Corie
+              </span>
+              <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest leading-[1.12]">
+                A decade of patient, transparent guidance built around real families.
+              </h2>
+              <p class="text-base text-stone leading-relaxed font-light">
+                Over more than ten years in financial advisory practice, Corie Anne del Carmen has partnered with individuals, young families, incorporated professionals, and business owners across the Greater Toronto Area who value clarity over salesmanship.
+              </p>
+              <p class="text-base text-stone leading-relaxed font-light">
+                Too often, people accumulate financial products piecemeal—a life policy here, an RRSP there, a corporate account left idle—without anyone connecting the pieces. Corie’s approach slows the process down: listening first, explaining trade-offs in plain language, and ensuring every recommendation earns its place in your broader plan.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-hairline">
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-gold font-semibold">Practice</div>
+                  <div class="text-sm font-medium text-forest mt-1">10+ Years Advisory Experience</div>
+                </div>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-gold font-semibold">Location</div>
+                  <div class="text-sm font-medium text-forest mt-1">205 Placer Court, North York</div>
+                </div>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-gold font-semibold">Standard</div>
+                  <div class="text-sm font-medium text-forest mt-1">Plain-Language Transparency</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. HOW WE WORK (#process) -->
+      <section id="process" class="py-20 sm:py-24 bg-alabaster/65 border-y border-hairline">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="max-w-2xl">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              How We Work
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
+              A calm, four-step rhythm from first conversation to lifelong stewardship.
+            </h2>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="rounded-2xl bg-ivory border border-hairline p-6 sm:p-7">
+              <span class="font-editorial text-3xl font-medium text-gold">01</span>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-2">Prepare &amp; Discover</h3>
+              <p class="text-sm text-stone leading-relaxed mt-3">
+                You bring your goals, documents, and questions; we clarify your family’s priorities and how we work—with zero pressure and no products pitched.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6 sm:p-7">
+              <span class="font-editorial text-3xl font-medium text-gold">02</span>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-2">Assess</h3>
+              <p class="text-sm text-stone leading-relaxed mt-3">
+                We analyze your net worth, cash flow, insurance coverage gaps, account structures, and tax exposure to establish a clear diagnostic baseline.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6 sm:p-7">
+              <span class="font-editorial text-3xl font-medium text-gold">03</span>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-2">Design</h3>
+              <p class="text-sm text-stone leading-relaxed mt-3">
+                We present a prioritized roadmap across insurance, investments, estate, and tax—walking through every option and cost before you approve a step.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-ivory border border-hairline p-6 sm:p-7">
+              <span class="font-editorial text-3xl font-medium text-gold">04</span>
+              <h3 class="font-editorial text-2xl font-medium text-forest mt-2">Steward</h3>
+              <p class="text-sm text-stone leading-relaxed mt-3">
+                Structured annual reviews and proactive adjustments keep your plan aligned through career transitions, home purchases, and retirement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. FAQ ACCORDION (#faq) -->
+      <section id="faq" class="py-20 sm:py-28">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Common Questions
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3">
+              Straightforward answers before we begin.
+            </h2>
+          </div>
+
+          <div class="mt-12 space-y-3.5">
+            <div class="faq-item rounded-2xl bg-alabaster/60 border border-hairline overflow-hidden">
+              <button
+                type="button"
+                class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-editorial text-xl sm:text-2xl font-medium text-forest"
+              >
+                <span>What does true financial independence mean in your planning philosophy?</span>
+                <span class="faq-icon text-gold text-2xl leading-none">+</span>
+              </button>
+              <div class="faq-content hidden px-6 pb-6 text-sm sm:text-[15px] text-stone leading-relaxed">
+                Financial independence isn’t just reaching an arbitrary portfolio number—it is having the protection, liquidity, and predictable income streams to make life decisions on your own terms without anxiety over unexpected setbacks.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-alabaster/60 border border-hairline overflow-hidden">
+              <button
+                type="button"
+                class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-editorial text-xl sm:text-2xl font-medium text-forest"
+              >
+                <span>Is there a minimum investable asset requirement to work together?</span>
+                <span class="faq-icon text-gold text-2xl leading-none">+</span>
+              </button>
+              <div class="faq-content hidden px-6 pb-6 text-sm sm:text-[15px] text-stone leading-relaxed">
+                No rigid asset minimum is required. We work with both established families and motivated professionals who are ready to take an organized, long-term approach to protection, savings, and tax planning.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-alabaster/60 border border-hairline overflow-hidden">
+              <button
+                type="button"
+                class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-editorial text-xl sm:text-2xl font-medium text-forest"
+              >
+                <span>How do you coordinate with my existing accountant or estate lawyer?</span>
+                <span class="faq-icon text-gold text-2xl leading-none">+</span>
+              </button>
+              <div class="faq-content hidden px-6 pb-6 text-sm sm:text-[15px] text-stone leading-relaxed">
+                With your permission, we share summaries of your corporate structure, beneficiary designations, and investment tax reporting directly with your CPA and legal counsel—or introduce you to trusted specialists from our network if you don’t have them yet.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-alabaster/60 border border-hairline overflow-hidden">
+              <button
+                type="button"
+                class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-editorial text-xl sm:text-2xl font-medium text-forest"
+              >
+                <span>How are you compensated, and is the initial discovery meeting complimentary?</span>
+                <span class="faq-icon text-gold text-2xl leading-none">+</span>
+              </button>
+              <div class="faq-content hidden px-6 pb-6 text-sm sm:text-[15px] text-stone leading-relaxed">
+                Yes—your initial discovery conversation is complimentary and carries zero obligation. During that meeting, we transparently explain how advisory fees and insurance commissions work depending on the services you choose, so there are never any surprises.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-alabaster/60 border border-hairline overflow-hidden">
+              <button
+                type="button"
+                class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-editorial text-xl sm:text-2xl font-medium text-forest"
+              >
+                <span>How often will we review and update my financial plan?</span>
+                <span class="faq-icon text-gold text-2xl leading-none">+</span>
+              </button>
+              <div class="faq-content hidden px-6 pb-6 text-sm sm:text-[15px] text-stone leading-relaxed">
+                We conduct formal comprehensive reviews at least annually—covering contribution limits (RRSP, FHSA, TFSA), portfolio rebalancing, and insurance coverage—and meet proactively whenever a major life event occurs, such as a home purchase, incorporation, inheritance, or approaching retirement at age 71.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- =========================================================
+       VIEW 2: INVESTMENT PRODUCTS & RRSP AT RETIREMENT
+       (delcarmen.ca/products)
+  ========================================================== -->
+  <div id="view-products" class="view-panel hidden">
+    <main>
+      <!-- Breadcrumb & Back Bar -->
+      <div class="bg-alabaster/70 border-b border-hairline">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div class="flex items-center gap-2 text-stone">
+            <button
+              type="button"
+              data-switch-view="home"
+              class="hover:text-forest font-medium transition-colors"
+            >
+              delcarmen.ca
+            </button>
+            <span>/</span>
+            <span class="text-forest font-semibold">Investment Products &amp; RRSP Retirement Guide</span>
+          </div>
+          <button
+            type="button"
+            data-switch-view="home"
+            class="inline-flex items-center gap-1.5 font-medium text-forest hover:text-gold transition-colors"
+          >
+            <span>← Back to Advisory Overview</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 1. PRODUCTS HERO & 2026 LIMITS SNAPSHOT -->
+      <section class="pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-hairline">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-end">
+            <div class="lg:col-span-8 space-y-6">
+              <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-alabaster border border-hairline">
+                <span class="w-2 h-2 rounded-full bg-gold"></span>
+                <span class="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
+                  Pillar II · Investment Products &amp; Account Strategy
+                </span>
+              </div>
+
+              <h1 class="font-editorial text-4xl sm:text-5xl lg:text-[58px] font-normal text-forest leading-[1.08] tracking-tight">
+                Choosing the right <em class="italic font-normal text-gold">investment account</em> multiplies what you keep.
+              </h1>
+
+              <p class="text-base sm:text-lg text-stone leading-relaxed max-w-2xl font-light">
+                Inside a coordinated financial plan, each Canadian account type serves a distinct tax purpose. Understanding how the <strong class="text-charcoal font-medium">RRSP</strong>, <strong class="text-charcoal font-medium">FHSA</strong>, <strong class="text-charcoal font-medium">TFSA</strong>, and <strong class="text-charcoal font-medium">Non-Registered</strong> accounts work together—and how RRSPs transition at retirement—turns ordinary savings into lasting wealth.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-3.5 pt-1">
+                <a
+                  href="#products-grid-section"
+                  class="inline-flex items-center justify-center rounded-full bg-forest px-6 py-3 text-sm font-medium text-ivory hover:bg-forestHover transition-colors"
+                >
+                  Compare the 4 Accounts
+                </a>
+                <a
+                  href="#rrsp-retirement-guide"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border border-forest/25 bg-ivory px-6 py-3 text-sm font-medium text-forest hover:bg-alabaster transition-colors"
+                >
+                  <span>What happens to RRSPs at retirement?</span>
+                  <span class="text-gold">↓</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- 2026 Canadian Contribution Limits Card -->
+            <div class="lg:col-span-4">
+              <div class="rounded-3xl bg-forest text-ivory p-6 sm:p-7 shadow-lg">
+                <div class="flex items-center justify-between border-b border-ivory/15 pb-3.5">
+                  <span class="text-xs uppercase tracking-[0.18em] text-goldLight font-semibold">
+                    2026 Canadian Limits
+                  </span>
+                  <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-ivory/10 text-ivory/85">
+                    CRA Reference
+                  </span>
+                </div>
+                <dl class="mt-4 space-y-3.5 text-sm">
+                  <div class="flex items-baseline justify-between gap-3">
+                    <dt class="text-ivory/75">RRSP Maximum</dt>
+                    <dd class="font-editorial text-xl font-medium text-ivory">$33,810 <span class="text-xs font-sans text-ivory/65">(18%)</span></dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-3">
+                    <dt class="text-ivory/75">FHSA Annual / Cap</dt>
+                    <dd class="font-editorial text-xl font-medium text-ivory">$8,000 / $40,000</dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-3">
+                    <dt class="text-ivory/75">TFSA Annual Limit</dt>
+                    <dd class="font-editorial text-xl font-medium text-ivory">$7,000 <span class="text-xs font-sans text-ivory/65">($109k cum.)</span></dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-3">
+                    <dt class="text-ivory/75">Non-Registered</dt>
+                    <dd class="font-editorial text-xl font-medium text-goldLight">Unlimited</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. DEEP-DIVE CARDS FOR ALL 4 INVESTMENT PRODUCTS -->
+      <section id="products-grid-section" class="py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="max-w-2xl">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+                Core Investment Vehicles
+              </span>
+              <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
+                Four investment products, each built for a specific role.
+              </h2>
+            </div>
+
+            <!-- Interactive Filter Tabs -->
+            <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter Investment Products">
+              <button
+                type="button"
+                data-filter="all"
+                class="account-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-forest text-ivory border border-forest transition-colors"
+              >
+                All Accounts (4)
+              </button>
+              <button
+                type="button"
+                data-filter="rrsp"
+                class="account-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+              >
+                RRSP
+              </button>
+              <button
+                type="button"
+                data-filter="fhsa"
+                class="account-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+              >
+                FHSA
+              </button>
+              <button
+                type="button"
+                data-filter="tfsa"
+                class="account-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+              >
+                TFSA
+              </button>
+              <button
+                type="button"
+                data-filter="nonreg"
+                class="account-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+              >
+                Non-Registered
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 Product Cards Grid -->
+          <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-7">
+            <!-- RRSP Card -->
+            <article
+              data-account="rrsp"
+              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                      Retirement &amp; Tax Deferral
+                    </span>
+                    <h3 class="font-editorial text-3xl sm:text-[34px] font-medium text-forest mt-1">
+                      RRSP
+                    </h3>
+                    <p class="text-xs font-medium text-stone">Registered Retirement Savings Plan</p>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-forest text-ivory text-xs font-medium shrink-0">
+                    2026 Max: $33,810
+                  </span>
+                </div>
+
+                <p class="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed mt-5">
+                  Designed to build long-term retirement savings while lowering your current income tax bill. Contributions are tax-deductible today, and investments grow completely tax-deferred until withdrawn—ideally during retirement when your marginal tax rate is lower.
+                </p>
+
+                <ul class="mt-6 space-y-3 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Contribution Room:</strong> 18% of prior-year earned income up to $33,810 for 2026, plus unused room carried forward indefinitely.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Upfront Tax Deduction:</strong> Deduct contributions against your highest marginal tax bracket during peak earning years.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">HBP &amp; LLP Access:</strong> Borrow tax-free for a first home under the <strong class="text-forest font-medium">Home Buyers’ Plan (HBP)</strong> (up to $60,000) or education under the <strong class="text-forest font-medium">Lifelong Learning Plan (LLP)</strong>, subject to scheduled repayments.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Spousal RRSP Strategy:</strong> Contribute to a spousal RRSP to equalize retirement income and lower combined household taxes later.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-7 pt-5 border-t border-hairline flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-stone">Maturity Deadline: <strong class="text-forest">Dec 31 of year you turn 71</strong></span>
+                <a href="#rrsp-retirement-guide" class="font-semibold text-forest hover:text-gold transition-colors">
+                  See RRSP retirement rules →
+                </a>
+              </div>
+            </article>
+
+            <!-- FHSA Card -->
+            <article
+              data-account="fhsa"
+              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                      First-Home Accumulation
+                    </span>
+                    <h3 class="font-editorial text-3xl sm:text-[34px] font-medium text-forest mt-1">
+                      FHSA
+                    </h3>
+                    <p class="text-xs font-medium text-stone">First Home Savings Account</p>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-forest text-ivory text-xs font-medium shrink-0">
+                    $8,000/yr · $40,000 Cap
+                  </span>
+                </div>
+
+                <p class="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed mt-5">
+                  The FHSA combines the best tax advantages of both an RRSP and a TFSA for eligible first-time homebuyers: contributions are tax-deductible like an RRSP, and qualifying withdrawals toward your first home—including all investment growth—are 100% tax-free like a TFSA.
+                </p>
+
+                <ul class="mt-6 space-y-3 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Contribution &amp; Carry-Forward:</strong> $8,000 annual limit up to a $40,000 lifetime cap. Unused room carries forward (up to $8,000/year) <em>once the account is opened</em>.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">No Repayment Required:</strong> Qualifying home withdrawals never have to be repaid—and can be paired with the RRSP Home Buyers’ Plan.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">15-Year Window:</strong> Open for up to 15 years (or until December 31 of the year you turn 71, whichever comes first).</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Tax-Free RRSP/RRIF Rollover:</strong> If you decide not to purchase a home, transfer your FHSA balance tax-free into your RRSP or RRIF without reducing existing RRSP contribution room.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-7 pt-5 border-t border-hairline flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-stone">Best Fit: <strong class="text-forest">First-time buyers within 15 years</strong></span>
+                <span class="font-medium text-gold">Tax-Deductible In · Tax-Free Out</span>
+              </div>
+            </article>
+
+            <!-- TFSA Card -->
+            <article
+              data-account="tfsa"
+              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                      Tax-Free Growth &amp; Flexibility
+                    </span>
+                    <h3 class="font-editorial text-3xl sm:text-[34px] font-medium text-forest mt-1">
+                      TFSA
+                    </h3>
+                    <p class="text-xs font-medium text-stone">Tax-Free Savings Account</p>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-forest text-ivory text-xs font-medium shrink-0">
+                    2026 Limit: $7,000
+                  </span>
+                </div>
+
+                <p class="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed mt-5">
+                  A versatile investment shelter capable of holding ETFs, stocks, bonds, mutual funds, and GICs. Funded with after-tax dollars, every dollar of interest, dividends, and capital gains compounds—and can be withdrawn at any time—completely free of tax.
+                </p>
+
+                <ul class="mt-6 space-y-3 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Cumulative Room:</strong> $7,000 annual limit for 2026, plus unused room since 2009 (up to $109,000 cumulative for Canadian residents 18+ since 2009).</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Replenishable Withdrawals:</strong> Withdraw funds tax-free anytime; the withdrawn amount is automatically added back to your contribution room on January 1 of the following year.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Zero OAS Clawback Impact:</strong> TFSA withdrawals do not count as taxable income and never reduce Old Age Security (OAS) or income-tested benefits.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Successor Holder Estate Advantage:</strong> Naming a spouse as successor holder preserves the tax-exempt status of the account upon death.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-7 pt-5 border-t border-hairline flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-stone">Earned Income Required? <strong class="text-forest">No (Age 18+ &amp; SIN)</strong></span>
+                <span class="font-medium text-gold">100% Tax-Free Liquidity</span>
+              </div>
+            </article>
+
+            <!-- Non-Registered Investments Card -->
+            <article
+              data-account="nonreg"
+              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                      Unrestricted Wealth Building
+                    </span>
+                    <h3 class="font-editorial text-3xl sm:text-[34px] font-medium text-forest mt-1">
+                      Non-Registered Investments
+                    </h3>
+                    <p class="text-xs font-medium text-stone">Individual, Joint &amp; Corporate Investment Accounts</p>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold text-ivory text-xs font-semibold shrink-0">
+                    Unlimited Capacity
+                  </span>
+                </div>
+
+                <p class="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed mt-5">
+                  Once your TFSA, RRSP, and FHSA limits are maximized—or when you require joint ownership, business liquidity, or unrestricted withdrawals—non-registered accounts offer unlimited investment capacity with preferential tax treatment on growth.
+                </p>
+
+                <ul class="mt-6 space-y-3 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">No Contribution Caps or Age Limits:</strong> Invest any amount at any stage of life with full liquidity and zero mandatory conversion deadlines.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Preferential Tax Rates:</strong> Only 50% of realized <strong class="text-forest font-medium">capital gains</strong> are included in taxable income (up to $250,000 annually for individuals), and <strong class="text-forest font-medium">eligible Canadian dividends</strong> receive the dividend tax credit.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Tax-Loss Harvesting:</strong> Capital losses can offset capital gains in the current year, be carried back 3 years, or carried forward indefinitely.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Strategic Asset Location:</strong> Ideal for holding tax-advantaged equity growth and Canadian dividend payers while sheltering interest income inside registered accounts.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-7 pt-5 border-t border-hairline flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-stone">Structures: <strong class="text-forest">Individual, Joint (JTWROS), Corporate</strong></span>
+                <span class="font-medium text-gold">Tax-Loss Harvesting Eligible</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SIDE-BY-SIDE COMPARISON MATRIX -->
+      <section id="accounts-comparison" class="py-20 sm:py-24 bg-alabaster/75 border-y border-hairline">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="max-w-2xl">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Side-by-Side Comparison Matrix
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
+              How all four accounts compare across tax and flexibility.
+            </h2>
+          </div>
+
+          <div class="mt-10 overflow-x-auto rounded-2xl border border-hairline bg-ivory shadow-sm">
+            <table class="w-full text-left border-collapse min-w-[780px]">
+              <thead>
+                <tr class="bg-forest text-ivory text-xs uppercase tracking-wider">
+                  <th class="py-4 px-5 font-semibold w-1/5">Dimension</th>
+                  <th class="py-4 px-5 font-semibold w-1/5">RRSP</th>
+                  <th class="py-4 px-5 font-semibold w-1/5">FHSA</th>
+                  <th class="py-4 px-5 font-semibold w-1/5">TFSA</th>
+                  <th class="py-4 px-5 font-semibold w-1/5">Non-Registered</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-hairline text-sm">
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">Contribution Tax</td>
+                  <td class="py-4 px-5 text-stone">Tax-deductible</td>
+                  <td class="py-4 px-5 text-stone">Tax-deductible</td>
+                  <td class="py-4 px-5 text-stone">After-tax dollars</td>
+                  <td class="py-4 px-5 text-stone">After-tax dollars</td>
+                </tr>
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">Investment Growth</td>
+                  <td class="py-4 px-5 text-stone">Tax-deferred</td>
+                  <td class="py-4 px-5 text-stone">Tax-free (qualifying)</td>
+                  <td class="py-4 px-5 text-stone">100% Tax-free</td>
+                  <td class="py-4 px-5 text-stone">Taxed annually (interest, dividends, realized gains)</td>
+                </tr>
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">Withdrawals</td>
+                  <td class="py-4 px-5 text-stone">Taxed as ordinary income (except HBP/LLP)</td>
+                  <td class="py-4 px-5 text-stone">Tax-free for qualifying first home</td>
+                  <td class="py-4 px-5 text-stone">100% Tax-free anytime</td>
+                  <td class="py-4 px-5 text-stone">Principal tax-free; capital gains taxed on sale</td>
+                </tr>
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">2026 Annual Limit</td>
+                  <td class="py-4 px-5 text-stone">18% of earned income up to $33,810</td>
+                  <td class="py-4 px-5 text-stone">$8,000/yr ($40,000 lifetime)</td>
+                  <td class="py-4 px-5 text-stone">$7,000/yr ($109,000 cumulative since 2009)</td>
+                  <td class="py-4 px-5 font-semibold text-forest">Unlimited</td>
+                </tr>
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">Unused Room Carry-Forward</td>
+                  <td class="py-4 px-5 text-stone">Yes, indefinitely</td>
+                  <td class="py-4 px-5 text-stone">Up to $8,000/yr after opening</td>
+                  <td class="py-4 px-5 text-stone">Yes, plus prior-year withdrawals</td>
+                  <td class="py-4 px-5 text-stone">N/A (Capital losses carry forward indefinitely)</td>
+                </tr>
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">OAS Clawback Impact</td>
+                  <td class="py-4 px-5 text-stone">Counts toward net income (can trigger clawback)</td>
+                  <td class="py-4 px-5 text-stone">None on qualifying home withdrawal</td>
+                  <td class="py-4 px-5 font-medium text-forest">Zero impact on OAS or GIS</td>
+                  <td class="py-4 px-5 text-stone">Dividends &amp; taxable gains count toward net income</td>
+                </tr>
+                <tr class="hover:bg-alabaster/40">
+                  <td class="py-4 px-5 font-semibold text-forest">Primary Role</td>
+                  <td class="py-4 px-5 text-stone">Peak-earning tax deferral for retirement</td>
+                  <td class="py-4 px-5 text-stone">Tax-advantaged first-home down payment</td>
+                  <td class="py-4 px-5 text-stone">Tax-free flexibility &amp; OAS-safe retirement income</td>
+                  <td class="py-4 px-5 text-stone">Overflow wealth, joint accounts &amp; corporate assets</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. COMPREHENSIVE GUIDE: WHAT HAPPENS AT RETIREMENT WITH RRSPS -->
+      <section id="rrsp-retirement-guide" class="py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <!-- Age 71 Rule Intro -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div class="lg:col-span-7 space-y-5">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+                Retirement Transition Guide
+              </span>
+              <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest leading-[1.12]">
+                What happens at retirement with RRSPs?
+              </h2>
+              <p class="text-base sm:text-lg text-stone leading-relaxed font-light">
+                An RRSP is designed for accumulation, not permanent storage. Under CRA rules, an RRSP cannot remain open indefinitely—it must mature by <strong class="text-forest font-semibold">December 31 of the calendar year in which you turn 71</strong> (though you can begin converting earlier if you retire sooner).
+              </p>
+              <p class="text-sm sm:text-base text-stone leading-relaxed">
+                Before that December 31 deadline, you must choose one—or a deliberate combination—of three maturity paths. Planning this transition ahead of time prevents an avoidable tax spike and protects government benefits like Old Age Security.
+              </p>
+            </div>
+
+            <!-- Age 71 Rule Callout Card -->
+            <div class="lg:col-span-5 rounded-3xl bg-alabaster border border-hairline p-7 space-y-4">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-forest text-ivory flex items-center justify-center font-editorial text-2xl font-medium">
+                  71
+                </div>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-gold font-semibold">The Age 71 Rule</div>
+                  <div class="font-editorial text-2xl font-medium text-forest">December 31 Deadline</div>
+                </div>
+              </div>
+              <p class="text-sm text-stone leading-relaxed">
+                If you do not elect a RRIF conversion or annuity purchase by December 31 of the year you turn 71, your financial institution must deregister the plan and pay out the entire balance as taxable income—potentially losing nearly half to top marginal tax brackets.
+              </p>
+              <div class="pt-3 border-t border-hairline text-xs text-forest font-medium">
+                Planning Note: You can convert part or all of your RRSP before age 71 to smooth out lifetime taxes.
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Comparison of the 3 RRSP Maturity Options -->
+          <div class="mt-14">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h3 class="font-editorial text-2xl sm:text-3xl font-medium text-forest">
+                  Three RRSP Maturity Options at Retirement
+                </h3>
+                <p class="text-sm text-stone mt-1">
+                  Select an option below to highlight its mechanics, tax impact, and ideal use case.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2" role="tablist" aria-label="RRSP Maturity Options">
+                <button
+                  type="button"
+                  data-maturity-tab="rrif"
+                  class="maturity-tab-btn px-4 py-2 rounded-full text-xs font-semibold bg-forest text-ivory border border-forest transition-colors"
+                >
+                  1. Convert to a RRIF
+                </button>
+                <button
+                  type="button"
+                  data-maturity-tab="annuity"
+                  class="maturity-tab-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+                >
+                  2. Payout Annuity
+                </button>
+                <button
+                  type="button"
+                  data-maturity-tab="lumpsum"
+                  class="maturity-tab-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+                >
+                  3. Lump-Sum Cash
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-7 grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Option 1: RRIF -->
+              <div
+                data-maturity-card="rrif"
+                class="maturity-card card-lift rounded-3xl bg-forest text-ivory p-7 sm:p-8 flex flex-col justify-between shadow-md ring-2 ring-gold"
+              >
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase tracking-[0.18em] text-goldLight font-semibold">Option 01 · Most Flexible</span>
+                    <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-ivory/15 text-ivory">Most Popular</span>
+                  </div>
+                  <h4 class="font-editorial text-3xl font-medium mt-4">Convert to a RRIF</h4>
+                  <p class="text-xs text-ivory/75 mt-0.5">Registered Retirement Income Fund</p>
+                  <p class="text-sm text-ivory/85 leading-relaxed mt-4">
+                    Your RRSP investments transfer “in kind” into a RRIF without triggering tax, continue compounding tax-deferred, and shift into paying you structured retirement income.
+                  </p>
+                  <ul class="mt-5 space-y-2.5 text-xs sm:text-sm text-ivory/85">
+                    <li class="flex items-start gap-2">
+                      <span class="text-goldLight font-bold">•</span>
+                      <span><strong>Mandatory Minimums:</strong> Begin the year <em>after</em> conversion (age 72 if converted at 71) based on CRA’s prescribed age schedule.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-goldLight font-bold">•</span>
+                      <span><strong>No Maximum Withdrawal Cap:</strong> Withdraw extra funds anytime (withholding tax applies only on amounts above the annual minimum).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-goldLight font-bold">•</span>
+                      <span><strong>Full Investment Control:</strong> Keep holding ETFs, stocks, bonds, or GICs while preserving remaining value for your estate.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-ivory/15 text-xs text-goldLight font-medium">
+                  Ideal for: Ongoing market growth, withdrawal flexibility &amp; estate value
+                </div>
+              </div>
+
+              <!-- Option 2: Payout Annuity -->
+              <div
+                data-maturity-card="annuity"
+                class="maturity-card card-lift rounded-3xl bg-alabaster/75 border border-hairline p-7 sm:p-8 flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">Option 02 · Guaranteed Income</span>
+                    <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-ivory border border-hairline text-forest">Zero Market Risk</span>
+                  </div>
+                  <h4 class="font-editorial text-3xl font-medium text-forest mt-4">Purchase a Payout Annuity</h4>
+                  <p class="text-xs text-stone mt-0.5">Lifetime or Fixed-Term Guaranteed Paycheque</p>
+                  <p class="text-sm text-stone leading-relaxed mt-4">
+                    Use part or all of your RRSP to purchase a contract from a life insurer that pays a guaranteed, predictable income stream for life (or a chosen term), insulated from market downturns.
+                  </p>
+                  <ul class="mt-5 space-y-2.5 text-xs sm:text-sm text-stone">
+                    <li class="flex items-start gap-2">
+                      <span class="text-gold font-bold">•</span>
+                      <span><strong class="text-forest">Eliminates Longevity Risk:</strong> Payments continue for as long as you—and optionally a surviving spouse—live.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gold font-bold">•</span>
+                      <span><strong class="text-forest">Pension Tax Credit Eligible:</strong> Qualifies for the $2,000 federal pension income tax credit starting at age 65.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gold font-bold">•</span>
+                      <span><strong class="text-forest">Trade-Off:</strong> Capital is permanently exchanged for income, with limited liquidity or estate residual unless a guarantee period is selected.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-hairline text-xs text-forest font-medium">
+                  Ideal for: Covering essential fixed monthly expenses for life
+                </div>
+              </div>
+
+              <!-- Option 3: Lump-Sum Cash Withdrawal -->
+              <div
+                data-maturity-card="lumpsum"
+                class="maturity-card card-lift rounded-3xl bg-alabaster/75 border border-hairline p-7 sm:p-8 flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase tracking-[0.18em] text-gold font-semibold">Option 03 · High Tax Impact</span>
+                    <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-ivory border border-hairline text-stone">Use With Caution</span>
+                  </div>
+                  <h4 class="font-editorial text-3xl font-medium text-forest mt-4">Lump-Sum Cash Withdrawal</h4>
+                  <p class="text-xs text-stone mt-0.5">Full Deregistration into Cash</p>
+                  <p class="text-sm text-stone leading-relaxed mt-4">
+                    Deregister your RRSP and withdraw the balance in cash. The entire withdrawn amount is taxed as ordinary income in that single calendar year.
+                  </p>
+                  <ul class="mt-5 space-y-2.5 text-xs sm:text-sm text-stone">
+                    <li class="flex items-start gap-2">
+                      <span class="text-gold font-bold">•</span>
+                      <span><strong class="text-forest">Immediate Withholding Tax:</strong> 10% to 30% withheld at source, plus additional tax owing on your T1 return.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gold font-bold">•</span>
+                      <span><strong class="text-forest">Top Marginal Tax Spike:</strong> In Ontario, large lump sums can be taxed above 53% and wipe out Old Age Security for the year.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-gold font-bold">•</span>
+                      <span><strong class="text-forest">When Appropriate:</strong> Generally suited only for very small RRSP balances or unusually low-income years.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-hairline text-xs text-forest font-medium">
+                  Ideal for: Small balances or targeted low-income bridge years
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERACTIVE RRIF MINIMUM WITHDRAWAL ESTIMATOR -->
+          <div id="rrif-estimator-section" class="mt-16 rounded-3xl bg-alabaster border border-hairline p-7 sm:p-10 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <!-- Controls -->
+              <div class="lg:col-span-6 space-y-6">
+                <div>
+                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+                    Interactive Calculator
+                  </span>
+                  <h3 class="font-editorial text-2xl sm:text-4xl font-normal text-forest mt-2">
+                    RRIF Minimum Withdrawal Estimator
+                  </h3>
+                  <p class="text-sm text-stone mt-2 leading-relaxed">
+                    Model your mandatory annual and monthly RRIF income using official CRA prescribed withdrawal factors from age 71 to 90.
+                  </p>
+                </div>
+
+                <!-- Balance Slider & Direct Input -->
+                <div class="space-y-2.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2 text-sm">
+                    <label for="rrsp-balance-slider" class="font-medium text-forest">
+                      RRSP / RRIF Balance on January 1
+                    </label>
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-stone text-sm">$</span>
+                      <input
+                        id="rrsp-balance-number"
+                        type="number"
+                        min="100000"
+                        max="2500000"
+                        step="10000"
+                        value="600000"
+                        aria-label="RRSP Balance in Dollars"
+                        class="w-32 rounded-lg border border-hairline bg-ivory px-2.5 py-1 text-right font-editorial text-xl font-semibold text-forest focus:outline-none focus:border-forest"
+                      />
+                    </div>
+                  </div>
+                  <input
+                    id="rrsp-balance-slider"
+                    type="range"
+                    min="100000"
+                    max="2500000"
+                    step="25000"
+                    value="600000"
+                    class="w-full cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[11px] text-stone">
+                    <span>$100,000</span>
+                    <span>$1,250,000</span>
+                    <span>$2,500,000</span>
+                  </div>
+                </div>
+
+                <!-- Age Selector (71 to 90) -->
+                <div class="space-y-2.5">
+                  <div class="flex items-center justify-between gap-2 text-sm">
+                    <label for="rrif-age-select" class="font-medium text-forest">
+                      Age on January 1 (or Younger Spouse’s Age)
+                    </label>
+                    <select
+                      id="rrif-age-select"
+                      class="rounded-lg border border-hairline bg-ivory px-3 py-1.5 font-editorial text-xl font-semibold text-forest focus:outline-none focus:border-forest"
+                    >
+                      <option value="71">Age 71 (5.28%)</option>
+                      <option value="72" selected>Age 72 (5.40%)</option>
+                      <option value="73">Age 73 (5.53%)</option>
+                      <option value="74">Age 74 (5.67%)</option>
+                      <option value="75">Age 75 (5.82%)</option>
+                      <option value="76">Age 76 (5.98%)</option>
+                      <option value="77">Age 77 (6.17%)</option>
+                      <option value="78">Age 78 (6.36%)</option>
+                      <option value="79">Age 79 (6.58%)</option>
+                      <option value="80">Age 80 (6.82%)</option>
+                      <option value="81">Age 81 (7.08%)</option>
+                      <option value="82">Age 82 (7.38%)</option>
+                      <option value="83">Age 83 (7.71%)</option>
+                      <option value="84">Age 84 (8.08%)</option>
+                      <option value="85">Age 85 (8.51%)</option>
+                      <option value="86">Age 86 (8.99%)</option>
+                      <option value="87">Age 87 (9.55%)</option>
+                      <option value="88">Age 88 (10.21%)</option>
+                      <option value="89">Age 89 (10.99%)</option>
+                      <option value="90">Age 90 (11.92%)</option>
+                    </select>
+                  </div>
+                  <input
+                    id="rrif-age-slider"
+                    type="range"
+                    min="71"
+                    max="90"
+                    step="1"
+                    value="72"
+                    class="w-full cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[11px] text-stone">
+                    <span>Age 71 (Conversion Year)</span>
+                    <span>Age 80</span>
+                    <span>Age 90</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dynamic Results Card -->
+              <div class="lg:col-span-6 rounded-2xl bg-forest text-ivory p-6 sm:p-8 space-y-6">
+                <div class="flex items-center justify-between border-b border-ivory/15 pb-4">
+                  <div>
+                    <div class="text-xs uppercase tracking-wider text-goldLight font-semibold">
+                      CRA Prescribed Minimum Factor
+                    </div>
+                    <div id="factor-display" class="font-editorial text-3xl sm:text-4xl font-medium mt-1">
+                      5.40%
+                    </div>
+                  </div>
+                  <span class="text-xs px-3 py-1 rounded-full bg-ivory/10 text-ivory/85">
+                    Official CRA Schedule
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                  <div class="rounded-xl bg-ivory/10 p-4">
+                    <div class="text-[11px] text-ivory/75">Annual Minimum</div>
+                    <div id="annual-min-display" class="font-editorial text-2xl sm:text-3xl font-medium text-ivory mt-1">
+                      $32,400
+                    </div>
+                    <div class="text-[11px] text-ivory/65 mt-1">Taxable income</div>
+                  </div>
+                  <div class="rounded-xl bg-ivory/10 p-4">
+                    <div class="text-[11px] text-ivory/75">Monthly Equivalent</div>
+                    <div id="monthly-min-display" class="font-editorial text-2xl sm:text-3xl font-medium text-goldLight mt-1">
+                      $2,700
+                    </div>
+                    <div class="text-[11px] text-ivory/65 mt-1">No withholding tax</div>
+                  </div>
+                  <div class="rounded-xl bg-ivory/10 p-4">
+                    <div class="text-[11px] text-ivory/75">Remaining Balance</div>
+                    <div id="remaining-balance-display" class="font-editorial text-2xl sm:text-3xl font-medium text-ivory mt-1">
+                      $567,600
+                    </div>
+                    <div class="text-[11px] text-ivory/65 mt-1">Before growth</div>
+                  </div>
+                </div>
+
+                <p class="text-xs text-ivory/75 leading-relaxed">
+                  Note: If you convert your RRSP to a RRIF in the year you turn 71, your first mandatory minimum withdrawal is required in the following calendar year (at age 72).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Key Retirement Planning Strategies for RRSPs / RRIFs -->
+          <div class="mt-14">
+            <h3 class="font-editorial text-2xl sm:text-3xl font-medium text-forest">
+              Key Retirement Planning Strategies for RRSPs &amp; RRIFs
+            </h3>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div class="rounded-2xl border border-hairline bg-alabaster/60 p-6">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gold">01 · Income Splitting</span>
+                <h4 class="font-editorial text-xl font-medium text-forest mt-2">Pension Income Splitting</h4>
+                <p class="text-xs sm:text-sm text-stone mt-2 leading-relaxed">
+                  Starting at age 65, allocate up to 50% of eligible RRIF or annuity income to a lower-income spouse on your tax return—and claim the $2,000 federal Pension Income Tax Credit.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-hairline bg-alabaster/60 p-6">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gold">02 · Spousal Age Election</span>
+                <h4 class="font-editorial text-xl font-medium text-forest mt-2">Use a Younger Spouse’s Age</h4>
+                <p class="text-xs sm:text-sm text-stone mt-2 leading-relaxed">
+                  Before your first RRIF payment, elect to base mandatory minimum percentages on your younger spouse’s age to reduce taxable withdrawals and keep assets compounding longer.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-hairline bg-alabaster/60 p-6">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gold">03 · OAS Clawback Control</span>
+                <h4 class="font-editorial text-xl font-medium text-forest mt-2">Strategic Early RRSP Meltdown</h4>
+                <p class="text-xs sm:text-sm text-stone mt-2 leading-relaxed">
+                  Gradually drawing down RRSPs between ages 60 and 71—while deferring CPP/OAS and supplementing cash flow with tax-free TFSA withdrawals—helps prevent OAS clawbacks after 71.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-hairline bg-alabaster/60 p-6">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gold">04 · Estate Continuity</span>
+                <h4 class="font-editorial text-xl font-medium text-forest mt-2">Spousal Rollover vs. Terminal Tax</h4>
+                <p class="text-xs sm:text-sm text-stone mt-2 leading-relaxed">
+                  Naming a spouse or common-law partner as beneficiary allows a tax-deferred rollover upon death; otherwise, the full fair market value is taxed on the final return.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- =========================================================
+       SHARED CONSULTATION BOOKING SECTION (#contact)
+  ========================================================== -->
+  <section id="contact" class="py-20 sm:py-28 bg-alabaster/50 border-t border-hairline">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="rounded-3xl bg-forest text-ivory p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 shadow-xl">
+        <!-- Left Info -->
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+          <div class="space-y-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-goldLight">
+              Start the Conversation
+            </span>
+            <h2 class="font-editorial text-3xl sm:text-5xl font-normal leading-[1.1]">
+              Book your initial discovery consultation.
+            </h2>
+            <p class="text-sm sm:text-base text-ivory/80 leading-relaxed font-light">
+              Whether you’re organizing your first financial baseline, reviewing family insurance protection, or coordinating RRSP, FHSA, TFSA, and retirement income strategies, let’s talk through your priorities.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-6 border-t border-ivory/15 text-sm text-ivory/85">
+            <div>
+              <div class="text-xs uppercase tracking-wider text-goldLight">Office</div>
+              <div class="mt-0.5">205 Placer Court, North York, Ontario M2H 3H9</div>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-goldLight">Direct Contact</div>
+              <div class="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+                <a href="tel:+16472852662" class="hover:text-goldLight transition-colors">+1 (647) 285-2662</a>
+                <span class="text-ivory/40">·</span>
+                <a href="mailto:corie@delcarmen.ca" class="hover:text-goldLight transition-colors">corie@delcarmen.ca</a>
+                <span class="text-ivory/40">·</span>
+                <span class="text-goldLight">delcarmen.ca</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Consultation Request Form -->
+        <div class="lg:col-span-7 bg-ivory text-charcoal rounded-2xl p-6 sm:p-8">
+          <form id="consultation-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1.5">
+                  Full Name
+                </label>
+                <input
+                  id="fullName"
+                  type="text"
+                  required
+                  placeholder="Jordan Taylor"
+                  class="w-full rounded-xl border border-hairline bg-alabaster/45 px-4 py-3 text-sm focus:outline-none focus:border-forest"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1.5">
+                  Email Address
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="jordan@example.com"
+                  class="w-full rounded-xl border border-hairline bg-alabaster/45 px-4 py-3 text-sm focus:outline-none focus:border-forest"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="focusArea" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1.5">
+                Primary Area of Focus
+              </label>
+              <select
+                id="focusArea"
+                class="w-full rounded-xl border border-hairline bg-alabaster/45 px-4 py-3 text-sm focus:outline-none focus:border-forest"
+              >
+                <option value="Full Coordinated Financial Plan (All Four Disciplines)">
+                  Full Coordinated Financial Plan (All Four Disciplines)
+                </option>
+                <option value="Insurance & Family Risk Protection">
+                  Insurance &amp; Family Risk Protection
+                </option>
+                <option value="RRSP, FHSA, TFSA & Non-Registered Investments">
+                  RRSP, FHSA, TFSA &amp; Non-Registered Investments
+                </option>
+                <option value="RRSP-to-RRIF Retirement Income Transition">
+                  RRSP-to-RRIF Retirement Income Transition
+                </option>
+                <option value="Estate & Legacy Planning">
+                  Estate &amp; Legacy Planning
+                </option>
+                <option value="Tax & Corporate Wealth Structuring">
+                  Tax &amp; Corporate Wealth Structuring
+                </option>
+              </select>
+            </div>
+
+            <div>
+              <label for="notes" class="block text-xs font-semibold uppercase tracking-wider text-stone mb-1.5">
+                Goals or Questions (Optional)
+              </label>
+              <textarea
+                id="notes"
+                rows="3"
+                placeholder="Share your short- or long-term goals, target retirement timeline, or questions..."
+                class="w-full rounded-xl border border-hairline bg-alabaster/45 px-4 py-3 text-sm focus:outline-none focus:border-forest"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full rounded-full bg-forest py-3.5 px-6 text-sm font-medium text-ivory hover:bg-forestHover transition-colors shadow-sm"
+            >
+              Request a Discovery Consultation
+            </button>
+
+            <div
+              id="form-confirmation"
+              class="hidden rounded-xl bg-alabaster border border-gold/50 p-4 text-xs sm:text-sm text-forest"
+            >
+              Thank you. Your consultation request has been noted—Corie’s office at <strong>delcarmen.ca</strong> will follow up within one business day with available times.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       COHESIVE FOOTER (delcarmen.ca)
+  ========================================================== -->
+  <footer class="border-t border-hairline bg-ivory py-12">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <span class="font-editorial text-2xl font-medium text-forest">Corie Anne del Carmen</span>
+          <p class="text-xs text-stone mt-1">
+            delcarmen.ca · 205 Placer Court, North York, Ontario M2H 3H9 · +1 (647) 285-2662
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-stone">
+          <a href="#overview" data-nav-view="home" data-nav-target="top" class="hover:text-forest transition-colors">
+            Overview
+          </a>
+          <a href="#first-step" data-nav-view="home" data-nav-target="first-step" class="hover:text-forest transition-colors">
+            Where to Begin
+          </a>
+          <a href="#services" data-nav-view="home" data-nav-target="services" class="hover:text-forest transition-colors">
+            Four Disciplines
+          </a>
+          <a href="#products" data-nav-view="products" class="text-forest font-semibold hover:text-gold transition-colors">
+            Investment Products
+          </a>
+          <a href="#contact" class="hover:text-forest transition-colors">
+            Book Consultation
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-5 border-t border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-stone/85 leading-relaxed">
+        <p class="max-w-3xl">
+          <strong>Educational Notice:</strong> Contribution limits, CRA RRIF minimum withdrawal factors, and Canadian tax rules summarized on delcarmen.ca reflect 2026 guidelines for general educational purposes and do not constitute individualized tax, legal, or investment advice.
+        </p>
+        <p class="whitespace-nowrap font-medium text-stone">
+          © 2026 Corie Anne del Carmen
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================
+    // MULTI-VIEW ROUTING (Overview <-> Investment Products)
+    // =========================================================
+    const viewHome = document.getElementById("view-home");
+    const viewProducts = document.getElementById("view-products");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+
+    let currentView = "home";
+
+    function switchView(targetView, sectionId = null, updateHash = true) {
+      currentView = targetView;
+
+      if (targetView === "products") {
+        viewHome.classList.add("hidden");
+        viewProducts.classList.remove("hidden");
+        if (updateHash) {
+          history.replaceState(null, "", sectionId ? `#${sectionId}` : "#products");
+        }
+      } else {
+        viewProducts.classList.add("hidden");
+        viewHome.classList.remove("hidden");
+        if (updateHash) {
+          history.replaceState(null, "", sectionId && sectionId !== "top" ? `#${sectionId}` : "#overview");
+        }
+      }
+
+      // Update Desktop Active State
+      document.querySelectorAll("header nav .nav-link").forEach((link) => {
+        const linkView = link.getAttribute("data-nav-view");
+        if (linkView === "products") {
+          if (targetView === "products") {
+            link.classList.add("bg-forest", "text-ivory", "border-forest");
+            link.classList.remove("bg-alabaster", "text-forest", "border-hairline");
+          } else {
+            link.classList.remove("bg-forest", "text-ivory", "border-forest");
+            link.classList.add("bg-alabaster", "text-forest", "border-hairline");
+          }
+        } else {
+          if (targetView === "home" && link.getAttribute("data-nav-target") === "top") {
+            link.classList.add("font-semibold", "text-forest");
+          } else {
+            link.classList.remove("font-semibold", "text-forest");
+          }
+        }
+      });
+
+      // Close mobile drawer if open
+      mobileMenu.classList.add("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", "false");
+
+      // Scroll smoothly to requested anchor or top
+      if (sectionId && sectionId !== "top") {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: "smooth" });
+          }, 30);
+          return;
+        }
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Bind navigation links with data-nav-view
+    document.querySelectorAll("[data-nav-view]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const view = el.getAttribute("data-nav-view");
+        const target = el.getAttribute("data-nav-target") || null;
+        switchView(view, target);
+      });
+    });
+
+    // Bind inline view-switcher buttons
+    document.querySelectorAll("[data-switch-view]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const view = btn.getAttribute("data-switch-view");
+        switchView(view);
+      });
+    });
+
+    // Pre-fill focus area when clicking pillar CTA links
+    document.querySelectorAll("[data-prefill-focus]").forEach((link) => {
+      link.addEventListener("click", () => {
+        const focusVal = link.getAttribute("data-prefill-focus");
+        const select = document.getElementById("focusArea");
+        if (select && focusVal) {
+          select.value = focusVal;
+        }
+      });
+    });
+
+    // Mobile Menu Toggle
+    mobileMenuBtn.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.toggle("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", String(!isHidden));
+    });
+
+    // Handle initial URL hash deep-links
+    function handleInitialHash() {
+      const hash = window.location.hash.replace("#", "");
+      const productHashes = [
+        "products",
+        "products-grid-section",
+        "accounts-comparison",
+        "rrsp-retirement-guide",
+        "rrif-estimator-section",
+      ];
+      if (productHashes.includes(hash)) {
+        switchView("products", hash === "products" ? null : hash, false);
+      } else if (hash && document.getElementById(hash)) {
+        switchView("home", hash, false);
+      }
+    }
+    handleInitialHash();
+
+    // =========================================================
+    // VIEW 1: INTERACTIVE FIRST-MEETING READINESS CHECKLIST
+    // =========================================================
+    const stepCards = document.querySelectorAll(".step-card");
+    const readinessBadge = document.getElementById("readiness-badge");
+    const readinessBar = document.getElementById("readiness-bar");
+    const readinessMessage = document.getElementById("readiness-message");
+    const resetChecklistBtn = document.getElementById("reset-checklist-btn");
+    const completedSteps = new Set();
+
+    function updateReadinessUI() {
+      const count = completedSteps.size;
+      const pct = (count / 4) * 100;
+      readinessBadge.textContent = `${count} of 4 Completed`;
+      readinessBar.style.width = `${pct}%`;
+
+      if (count === 0) {
+        readinessBadge.className =
+          "text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-alabaster text-stone border border-hairline";
+        readinessMessage.textContent =
+          "Select each action card below as you complete it to prepare for your discovery conversation.";
+        resetChecklistBtn.classList.add("hidden");
+      } else if (count < 4) {
+        readinessBadge.className =
+          "text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-gold/15 text-forest border border-gold/40";
+        readinessMessage.textContent = `Strong progress—${4 - count} step${4 - count === 1 ? "" : "s"} remaining to complete your pre-meeting baseline.`;
+        resetChecklistBtn.classList.remove("hidden");
+      } else {
+        readinessBadge.className =
+          "text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-forest text-ivory border border-forest";
+        readinessMessage.textContent =
+          "You’re completely ready for a focused, productive first advisory meeting.";
+        resetChecklistBtn.classList.remove("hidden");
+      }
+    }
+
+    function toggleStepCard(card) {
+      const id = card.getAttribute("data-step-card");
+      const pill = card.querySelector(".check-pill");
+      const dot = card.querySelector(".check-dot");
+      const label = card.querySelector(".check-label");
+
+      if (completedSteps.has(id)) {
+        completedSteps.delete(id);
+        card.setAttribute("aria-checked", "false");
+        card.classList.remove("border-forest", "ring-1", "ring-forest/20");
+        card.classList.add("border-hairline");
+        pill.className =
+          "check-pill inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border border-hairline text-stone bg-alabaster/70 transition-colors";
+        dot.className = "check-dot w-2 h-2 rounded-full bg-hairline";
+        label.textContent = "Mark ready";
+      } else {
+        completedSteps.add(id);
+        card.setAttribute("aria-checked", "true");
+        card.classList.remove("border-hairline");
+        card.classList.add("border-forest", "ring-1", "ring-forest/20");
+        pill.className =
+          "check-pill inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border border-forest text-ivory bg-forest transition-colors";
+        dot.className = "check-dot w-2 h-2 rounded-full bg-goldLight";
+        label.textContent = "Ready ✓";
+      }
+      updateReadinessUI();
+    }
+
+    stepCards.forEach((card) => {
+      card.addEventListener("click", () => toggleStepCard(card));
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleStepCard(card);
+        }
+      });
+    });
+
+    resetChecklistBtn.addEventListener("click", () => {
+      stepCards.forEach((card) => {
+        if (completedSteps.has(card.getAttribute("data-step-card"))) {
+          toggleStepCard(card);
+        }
+      });
+    });
+
+    // =========================================================
+    // VIEW 1: FAQ ACCORDION
+    // =========================================================
+    document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const item = trigger.closest(".faq-item");
+        const content = item.querySelector(".faq-content");
+        const icon = item.querySelector(".faq-icon");
+        const isOpen = !content.classList.contains("hidden");
+
+        document.querySelectorAll(".faq-content").forEach((c) => c.classList.add("hidden"));
+        document.querySelectorAll(".faq-icon").forEach((i) => (i.textContent = "+"));
+
+        if (!isOpen) {
+          content.classList.remove("hidden");
+          icon.textContent = "−";
+        }
+      });
+    });
+
+    // =========================================================
+    // VIEW 2: INVESTMENT PRODUCT FILTER TABS
+    // =========================================================
+    const filterButtons = document.querySelectorAll(".account-filter-btn");
+    const accountCards = document.querySelectorAll(".account-card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const selected = btn.getAttribute("data-filter");
+
+        filterButtons.forEach((b) => {
+          b.classList.remove("bg-forest", "text-ivory", "border-forest", "font-semibold");
+          b.classList.add("bg-alabaster", "text-forest", "border-hairline", "font-medium");
+        });
+        btn.classList.remove("bg-alabaster", "text-forest", "border-hairline", "font-medium");
+        btn.classList.add("bg-forest", "text-ivory", "border-forest", "font-semibold");
+
+        accountCards.forEach((card) => {
+          if (selected === "all" || card.getAttribute("data-account") === selected) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+
+    // =========================================================
+    // VIEW 2: RRSP MATURITY OPTION HIGHLIGHTER
+    // =========================================================
+    const maturityTabs = document.querySelectorAll(".maturity-tab-btn");
+    const maturityCards = document.querySelectorAll(".maturity-card");
+
+    maturityTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const selected = tab.getAttribute("data-maturity-tab");
+
+        maturityTabs.forEach((t) => {
+          t.classList.remove("bg-forest", "text-ivory", "border-forest", "font-semibold");
+          t.classList.add("bg-alabaster", "text-forest", "border-hairline", "font-medium");
+        });
+        tab.classList.remove("bg-alabaster", "text-forest", "border-hairline", "font-medium");
+        tab.classList.add("bg-forest", "text-ivory", "border-forest", "font-semibold");
+
+        maturityCards.forEach((card) => {
+          if (card.getAttribute("data-maturity-card") === selected) {
+            card.classList.add("ring-2", "ring-gold");
+          } else {
+            card.classList.remove("ring-2", "ring-gold");
+          }
+        });
+      });
+    });
+
+    // =========================================================
+    // VIEW 2: CRA RRIF MINIMUM WITHDRAWAL ESTIMATOR (Ages 71-90)
+    // =========================================================
+    const craRrifFactors = {
+      71: 0.0528,
+      72: 0.0540,
+      73: 0.0553,
+      74: 0.0567,
+      75: 0.0582,
+      76: 0.0598,
+      77: 0.0617,
+      78: 0.0636,
+      79: 0.0658,
+      80: 0.0682,
+      81: 0.0708,
+      82: 0.0738,
+      83: 0.0771,
+      84: 0.0808,
+      85: 0.0851,
+      86: 0.0899,
+      87: 0.0955,
+      88: 0.1021,
+      89: 0.1099,
+      90: 0.1192,
+    };
+
+    const balanceSlider = document.getElementById("rrsp-balance-slider");
+    const balanceNumber = document.getElementById("rrsp-balance-number");
+    const ageSelect = document.getElementById("rrif-age-select");
+    const ageSlider = document.getElementById("rrif-age-slider");
+    const factorDisplay = document.getElementById("factor-display");
+    const annualMinDisplay = document.getElementById("annual-min-display");
+    const monthlyMinDisplay = document.getElementById("monthly-min-display");
+    const remainingBalanceDisplay = document.getElementById("remaining-balance-display");
+
+    function updateRrifEstimator(source) {
+      let balance = Number(source === "number" ? balanceNumber.value : balanceSlider.value);
+      if (isNaN(balance) || balance < 0) balance = 100000;
+      if (balance > 2500000) balance = 2500000;
+
+      balanceSlider.value = Math.min(Math.max(balance, 100000), 2500000);
+      balanceNumber.value = balance;
+
+      const age = Number(source === "select" ? ageSelect.value : ageSlider.value);
+      ageSelect.value = String(age);
+      ageSlider.value = String(age);
+
+      const factor = craRrifFactors[age] || 0.0540;
+      const annualMin = Math.round(balance * factor);
+      const monthlyMin = Math.round(annualMin / 12);
+      const remaining = Math.max(0, balance - annualMin);
+
+      factorDisplay.textContent = (factor * 100).toFixed(2) + "%";
+      annualMinDisplay.textContent = "$" + annualMin.toLocaleString("en-CA");
+      monthlyMinDisplay.textContent = "$" + monthlyMin.toLocaleString("en-CA");
+      remainingBalanceDisplay.textContent = "$" + remaining.toLocaleString("en-CA");
+    }
+
+    balanceSlider.addEventListener("input", () => updateRrifEstimator("slider"));
+    balanceNumber.addEventListener("input", () => updateRrifEstimator("number"));
+    ageSelect.addEventListener("change", () => updateRrifEstimator("select"));
+    ageSlider.addEventListener("input", () => updateRrifEstimator("ageSlider"));
+    updateRrifEstimator("slider");
+
+    // =========================================================
+    // CONSULTATION BOOKING FORM
+    // =========================================================
+    const consultationForm = document.getElementById("consultation-form");
+    const formConfirmation = document.getElementById("form-confirmation");
+    consultationForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      formConfirmation.classList.remove("hidden");
+      consultationForm.reset();
+    });
+  </script>
+</body>
+</html>
