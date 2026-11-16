@@ -567,7 +567,7 @@
                   </li>
                   <li class="flex items-start gap-2.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
-                    <span>Registered account strategy (RRSP, FHSA, TFSA &amp; Non-Registered)</span>
+                    <span>Registered account strategy (RRSP, FHSA, TFSA, RESP &amp; Non-Registered)</span>
                   </li>
                   <li class="flex items-start gap-2.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
@@ -973,7 +973,7 @@
               </h1>
 
               <p class="text-base sm:text-lg text-stone leading-relaxed max-w-2xl font-light">
-                Inside a coordinated financial plan, each Canadian account type serves a distinct tax purpose. Understanding how the <strong class="text-charcoal font-medium">RRSP</strong>, <strong class="text-charcoal font-medium">FHSA</strong>, <strong class="text-charcoal font-medium">TFSA</strong>, and <strong class="text-charcoal font-medium">Non-Registered</strong> accounts work together—and how RRSPs transition at retirement—turns ordinary savings into lasting wealth.
+                Inside a coordinated financial plan, each Canadian account type serves a distinct tax purpose. Understanding how the <strong class="text-charcoal font-medium">RRSP</strong>, <strong class="text-charcoal font-medium">FHSA</strong>, <strong class="text-charcoal font-medium">TFSA</strong>, <strong class="text-charcoal font-medium">RESP</strong>, and <strong class="text-charcoal font-medium">Non-Registered</strong> accounts work together—and how RRSPs transition at retirement—turns ordinary savings into lasting wealth.
               </p>
 
               <div class="flex flex-wrap items-center gap-3.5 pt-1">
@@ -981,7 +981,7 @@
                   href="#products-grid-section"
                   class="inline-flex items-center justify-center rounded-full bg-forest px-6 py-3 text-sm font-medium text-ivory hover:bg-forestHover transition-colors"
                 >
-                  Compare the 4 Accounts
+                  Compare the 5 Accounts
                 </a>
                 <a
                   href="#rrsp-retirement-guide"
@@ -1004,7 +1004,7 @@
                     CRA Reference
                   </span>
                 </div>
-                <dl class="mt-4 space-y-3.5 text-sm">
+                <dl class="mt-4 space-y-3 text-sm">
                   <div class="flex items-baseline justify-between gap-3">
                     <dt class="text-ivory/75">RRSP Maximum</dt>
                     <dd class="font-editorial text-xl font-medium text-ivory">$33,810 <span class="text-xs font-sans text-ivory/65">(18%)</span></dd>
@@ -1018,6 +1018,10 @@
                     <dd class="font-editorial text-xl font-medium text-ivory text-right">$7,000 <span class="block text-xs font-sans text-ivory/65">($109k cumulative)</span></dd>
                   </div>
                   <div class="flex items-baseline justify-between gap-3">
+                    <dt class="text-ivory/75">RESP Lifetime / Grant</dt>
+                    <dd class="font-editorial text-xl font-medium text-ivory text-right">$50,000 <span class="block text-xs font-sans text-ivory/65">+ $7,200 CESG</span></dd>
+                  </div>
+                  <div class="flex items-baseline justify-between gap-3">
                     <dt class="text-ivory/75">Non-Registered</dt>
                     <dd class="font-editorial text-xl font-medium text-goldLight">Unlimited</dd>
                   </div>
@@ -1028,7 +1032,7 @@
         </div>
       </section>
 
-      <!-- 2. DEEP-DIVE CARDS FOR ALL 4 INVESTMENT PRODUCTS -->
+      <!-- 2. DEEP-DIVE CARDS FOR ALL 5 INVESTMENT PRODUCTS -->
       <section id="products-grid-section" class="py-20 sm:py-28">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -1037,7 +1041,7 @@
                 Core Investment Vehicles
               </span>
               <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
-                Four investment products, each built for a specific role.
+                Five investment products, each built for a specific role.
               </h2>
             </div>
 
@@ -1048,7 +1052,7 @@
                 data-filter="all"
                 class="account-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-forest text-ivory border border-forest transition-colors"
               >
-                All Accounts (4)
+                All Five Accounts
               </button>
               <button
                 type="button"
@@ -1073,6 +1077,13 @@
               </button>
               <button
                 type="button"
+                data-filter="resp"
+                class="account-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
+              >
+                RESP
+              </button>
+              <button
+                type="button"
                 data-filter="nonreg"
                 class="account-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-alabaster text-forest border border-hairline hover:border-forest transition-colors"
               >
@@ -1081,7 +1092,7 @@
             </div>
           </div>
 
-          <!-- 4 Product Cards Grid -->
+          <!-- 5 Product Cards Grid -->
           <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-7">
             <!-- RRSP Card -->
             <article
@@ -1238,10 +1249,62 @@
               </div>
             </article>
 
+            <!-- RESP Card -->
+            <article
+              data-account="resp"
+              data-category="resp"
+              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                      Education &amp; Government Grants
+                    </span>
+                    <h3 class="font-editorial text-3xl sm:text-[34px] font-medium text-forest mt-1">
+                      RESP
+                    </h3>
+                    <p class="text-xs font-medium text-stone">Registered Education Savings Plan</p>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-forest text-ivory text-xs font-medium shrink-0">
+                    $50k Cap + 20% CESG
+                  </span>
+                </div>
+
+                <p class="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed mt-5">
+                  A tax-deferred education savings plan designed to help parents, grandparents, and family members fund a child’s post-secondary education—supercharged by direct federal and provincial matching grants.
+                </p>
+
+                <ul class="mt-6 space-y-3 text-sm text-stone">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">$50,000 Lifetime Contribution Limit:</strong> No annual contribution cap per beneficiary, allowing lump-sum or scheduled contributions up to $50,000 per child while investments compound tax-deferred.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Canada Education Savings Grant (CESG):</strong> Matches 20% on the first $2,500 contributed each year (up to <strong class="text-forest font-medium">$500/year</strong> and <strong class="text-forest font-medium">$7,200 lifetime maximum</strong> per child), with unused grant room carrying forward for catch-up contributions (up to $1,000 grant/year).</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">Additional Grants &amp; Student-Taxed EAPs:</strong> Eligible families may also receive the <strong class="text-forest font-medium">Canada Learning Bond (CLB)</strong> (up to $2,000) and provincial incentives. At school, original principal comes out tax-free while grants and growth (<strong class="text-forest font-medium">EAPs</strong>) are taxed in the student’s hands—usually at zero or minimal tax.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                    <span><strong class="text-forest font-semibold">RRSP Rollover Flexibility:</strong> Remains open up to 35 years; if a beneficiary does not pursue post-secondary education, up to <strong class="text-forest font-medium">$50,000</strong> of accumulated investment income (AIP) can be rolled into the subscriber’s RRSP (subject to available RRSP room).</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-7 pt-5 border-t border-hairline flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-stone">Plan Types: <strong class="text-forest">Individual &amp; Family Plans</strong></span>
+                <span class="font-medium text-gold">Up to $7,200 Lifetime CESG Match</span>
+              </div>
+            </article>
+
             <!-- Non-Registered Investments Card -->
             <article
               data-account="nonreg"
-              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between"
+              class="account-card card-lift rounded-3xl bg-alabaster/70 border border-hairline p-7 sm:p-9 flex flex-col justify-between lg:col-span-2"
             >
               <div>
                 <div class="flex items-start justify-between gap-4">
@@ -1300,70 +1363,78 @@
               Side-by-Side Comparison Matrix
             </span>
             <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-forest mt-3 leading-[1.12]">
-              How all four accounts compare across tax and flexibility.
+              How all five accounts compare across tax and flexibility.
             </h2>
           </div>
 
           <div class="mt-10 overflow-x-auto rounded-2xl border border-hairline bg-ivory shadow-sm">
-            <table class="w-full text-left border-collapse min-w-[780px]">
+            <table class="w-full text-left border-collapse min-w-[920px]">
               <thead>
                 <tr class="bg-forest text-ivory text-xs uppercase tracking-wider">
-                  <th class="py-4 px-5 font-semibold w-1/5">Dimension</th>
-                  <th class="py-4 px-5 font-semibold w-1/5">RRSP</th>
-                  <th class="py-4 px-5 font-semibold w-1/5">FHSA</th>
-                  <th class="py-4 px-5 font-semibold w-1/5">TFSA</th>
-                  <th class="py-4 px-5 font-semibold w-1/5">Non-Registered</th>
+                  <th class="py-4 px-4 font-semibold w-[15%]">Dimension</th>
+                  <th class="py-4 px-4 font-semibold w-[17%]">RRSP</th>
+                  <th class="py-4 px-4 font-semibold w-[17%]">FHSA</th>
+                  <th class="py-4 px-4 font-semibold w-[17%]">TFSA</th>
+                  <th class="py-4 px-4 font-semibold w-[17%]">RESP</th>
+                  <th class="py-4 px-4 font-semibold w-[17%]">Non-Registered</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-hairline text-sm">
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">Contribution Tax</td>
-                  <td class="py-4 px-5 text-stone">Tax-deductible</td>
-                  <td class="py-4 px-5 text-stone">Tax-deductible</td>
-                  <td class="py-4 px-5 text-stone">After-tax dollars</td>
-                  <td class="py-4 px-5 text-stone">After-tax dollars</td>
+                  <td class="py-4 px-4 font-semibold text-forest">Contribution Tax</td>
+                  <td class="py-4 px-4 text-stone">Tax-deductible</td>
+                  <td class="py-4 px-4 text-stone">Tax-deductible</td>
+                  <td class="py-4 px-4 text-stone">After-tax dollars</td>
+                  <td class="py-4 px-4 text-stone">After-tax dollars</td>
+                  <td class="py-4 px-4 text-stone">After-tax dollars</td>
                 </tr>
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">Investment Growth</td>
-                  <td class="py-4 px-5 text-stone">Tax-deferred</td>
-                  <td class="py-4 px-5 text-stone">Tax-free (qualifying)</td>
-                  <td class="py-4 px-5 text-stone">100% Tax-free</td>
-                  <td class="py-4 px-5 text-stone">Taxed annually (interest, dividends, realized gains)</td>
+                  <td class="py-4 px-4 font-semibold text-forest">Investment Growth</td>
+                  <td class="py-4 px-4 text-stone">Tax-deferred</td>
+                  <td class="py-4 px-4 text-stone">Tax-free (qualifying)</td>
+                  <td class="py-4 px-4 text-stone">100% Tax-free</td>
+                  <td class="py-4 px-4 text-stone">Tax-deferred</td>
+                  <td class="py-4 px-4 text-stone">Taxed annually (interest, dividends, realized gains)</td>
                 </tr>
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">Withdrawals</td>
-                  <td class="py-4 px-5 text-stone">Taxed as ordinary income (except HBP/LLP)</td>
-                  <td class="py-4 px-5 text-stone">Tax-free for qualifying first home</td>
-                  <td class="py-4 px-5 text-stone">100% Tax-free anytime</td>
-                  <td class="py-4 px-5 text-stone">Principal tax-free; capital gains taxed on sale</td>
+                  <td class="py-4 px-4 font-semibold text-forest">Withdrawal Tax</td>
+                  <td class="py-4 px-4 text-stone">Taxed as ordinary income (except HBP/LLP)</td>
+                  <td class="py-4 px-4 text-stone">Tax-free for qualifying first home</td>
+                  <td class="py-4 px-4 text-stone">100% Tax-free anytime</td>
+                  <td class="py-4 px-4 text-stone">Contributions tax-free; grants &amp; growth taxed to student as EAP</td>
+                  <td class="py-4 px-4 text-stone">Principal tax-free; capital gains taxed on sale</td>
                 </tr>
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">2026 Annual Limit</td>
-                  <td class="py-4 px-5 text-stone">18% of earned income up to $33,810</td>
-                  <td class="py-4 px-5 text-stone">$8,000/yr ($40,000 lifetime)</td>
-                  <td class="py-4 px-5 text-stone">$7,000/yr ($109,000 cumulative since 2009)</td>
-                  <td class="py-4 px-5 font-semibold text-forest">Unlimited</td>
+                  <td class="py-4 px-4 font-semibold text-forest">2026 Limit</td>
+                  <td class="py-4 px-4 text-stone">18% of earned income up to $33,810</td>
+                  <td class="py-4 px-4 text-stone">$8,000/yr ($40,000 lifetime)</td>
+                  <td class="py-4 px-4 text-stone">$7,000/yr ($109,000 cumulative since 2009)</td>
+                  <td class="py-4 px-4 text-stone">$50,000 lifetime cap + 20% CESG up to $500/yr</td>
+                  <td class="py-4 px-4 font-semibold text-forest">Unlimited</td>
                 </tr>
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">Unused Room Carry-Forward</td>
-                  <td class="py-4 px-5 text-stone">Yes, indefinitely</td>
-                  <td class="py-4 px-5 text-stone">Up to $8,000/yr after opening</td>
-                  <td class="py-4 px-5 text-stone">Yes, plus prior-year withdrawals</td>
-                  <td class="py-4 px-5 text-stone">N/A (Capital losses carry forward indefinitely)</td>
+                  <td class="py-4 px-4 font-semibold text-forest">Carry-Forward</td>
+                  <td class="py-4 px-4 text-stone">Yes, indefinitely</td>
+                  <td class="py-4 px-4 text-stone">Up to $8,000/yr after opening</td>
+                  <td class="py-4 px-4 text-stone">Yes, plus prior-year withdrawals</td>
+                  <td class="py-4 px-4 text-stone">Unused CESG grant room carries forward</td>
+                  <td class="py-4 px-4 text-stone">N/A (Capital losses carry forward indefinitely)</td>
                 </tr>
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">OAS Clawback Impact</td>
-                  <td class="py-4 px-5 text-stone">Counts toward net income (can trigger clawback)</td>
-                  <td class="py-4 px-5 text-stone">None on qualifying home withdrawal</td>
-                  <td class="py-4 px-5 font-medium text-forest">Zero impact on OAS or GIS</td>
-                  <td class="py-4 px-5 text-stone">Dividends &amp; taxable gains count toward net income</td>
+                  <td class="py-4 px-4 font-semibold text-forest">OAS Clawback Impact</td>
+                  <td class="py-4 px-4 text-stone">Counts toward net income (can trigger clawback)</td>
+                  <td class="py-4 px-4 text-stone">None on qualifying home withdrawal</td>
+                  <td class="py-4 px-4 font-medium text-forest">Zero impact on OAS or GIS</td>
+                  <td class="py-4 px-4 text-stone">None to subscriber on principal or student EAPs</td>
+                  <td class="py-4 px-4 text-stone">Dividends &amp; taxable gains count toward net income</td>
                 </tr>
                 <tr class="hover:bg-alabaster/40">
-                  <td class="py-4 px-5 font-semibold text-forest">Primary Role</td>
-                  <td class="py-4 px-5 text-stone">Peak-earning tax deferral for retirement</td>
-                  <td class="py-4 px-5 text-stone">Tax-advantaged first-home down payment</td>
-                  <td class="py-4 px-5 text-stone">Tax-free flexibility &amp; OAS-safe retirement income</td>
-                  <td class="py-4 px-5 text-stone">Overflow wealth, joint accounts &amp; corporate assets</td>
+                  <td class="py-4 px-4 font-semibold text-forest">Best For</td>
+                  <td class="py-4 px-4 text-stone">Peak-earning tax deferral for retirement</td>
+                  <td class="py-4 px-4 text-stone">Tax-advantaged first-home down payment</td>
+                  <td class="py-4 px-4 text-stone">Tax-free flexibility &amp; OAS-safe retirement income</td>
+                  <td class="py-4 px-4 text-stone">Post-secondary education funding &amp; government grant matching</td>
+                  <td class="py-4 px-4 text-stone">Overflow wealth, joint accounts &amp; corporate assets</td>
                 </tr>
               </tbody>
             </table>
@@ -1832,6 +1903,9 @@
                 </option>
                 <option value="RRSP, FHSA, TFSA & Non-Registered Investments">
                   RRSP, FHSA, TFSA &amp; Non-Registered Investments
+                </option>
+                <option value="RESP & Education Planning">
+                  RESP &amp; Education Planning
                 </option>
                 <option value="RRSP-to-RRIF Retirement Income Transition">
                   RRSP-to-RRIF Retirement Income Transition
