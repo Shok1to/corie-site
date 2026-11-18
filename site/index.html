@@ -90,29 +90,32 @@
   <!-- =========================================================
        STICKY NAVIGATION HEADER (delcarmen.ca)
   ========================================================== -->
-  <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-hairline">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+  <header class="sticky top-0 z-40 bg-[#214E4B] backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
       <!-- Brand Identity -->
       <a
         href="#overview"
         data-nav-view="home"
-        class="flex flex-col group focus:outline-none"
+        class="flex items-center gap-3 group focus:outline-none"
       >
-        <span class="font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-forest leading-none">
-          Corie Anne del Carmen
-        </span>
-        <span class="text-[11px] uppercase tracking-[0.2em] text-gold mt-1 font-semibold">
-          delcarmen.ca · Financial Advisory
+        <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-9 w-auto shrink-0" />
+        <span class="flex flex-col">
+          <span class="sm:whitespace-nowrap font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-ivory leading-none">
+            Corie Anne del Carmen
+          </span>
+          <span class="hidden sm:block sm:whitespace-nowrap text-[11px] uppercase tracking-[0.2em] text-[#B7CFCB] mt-1 font-semibold">
+            delcarmen.ca · Financial Advisory
+          </span>
         </span>
       </a>
 
       <!-- Desktop Navigation -->
-      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-6 text-sm text-stone">
+      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-5 text-[13px] whitespace-nowrap text-ivory/75">
         <a
           href="#overview"
           data-nav-view="home"
           data-nav-target="top"
-          class="nav-link font-semibold text-forest transition-colors"
+          class="nav-link font-semibold text-ivory transition-colors"
         >
           Overview
         </a>
@@ -120,7 +123,7 @@
           href="#first-step"
           data-nav-view="home"
           data-nav-target="first-step"
-          class="nav-link hover:text-forest transition-colors"
+          class="nav-link hover:text-ivory transition-colors"
         >
           Where to Begin
         </a>
@@ -128,14 +131,14 @@
           href="#services"
           data-nav-view="home"
           data-nav-target="services"
-          class="nav-link hover:text-forest transition-colors"
+          class="nav-link hover:text-ivory transition-colors"
         >
           Four Disciplines
         </a>
         <a
           href="#products"
           data-nav-view="products"
-          class="nav-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-alabaster border border-hairline text-forest font-medium hover:border-gold transition-colors"
+          class="nav-link inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/25 text-ivory font-medium hover:border-gold transition-colors"
         >
           <span>Investment Products</span>
           <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
@@ -144,16 +147,16 @@
           href="#about"
           data-nav-view="home"
           data-nav-target="about"
-          class="nav-link hover:text-forest transition-colors"
+          class="nav-link hover:text-ivory transition-colors"
         >
           About &amp; Process
         </a>
-        <a href="/blog" class="hover:text-forest transition-colors">Blog</a>
+        <a href="/blog" class="hover:text-ivory transition-colors">Blog</a>
         <a
           href="#faq"
           data-nav-view="home"
           data-nav-target="faq"
-          class="nav-link hover:text-forest transition-colors"
+          class="nav-link hover:text-ivory transition-colors"
         >
           FAQ
         </a>
@@ -164,7 +167,7 @@
         <a
           href="#contact"
           data-book-link="true"
-          class="inline-flex items-center justify-center rounded-full bg-forest px-5 py-2.5 text-xs sm:text-sm font-medium text-ivory hover:bg-forestHover transition-colors shadow-sm"
+          class="inline-flex items-center justify-center rounded-full bg-ivory px-5 py-2.5 text-xs sm:text-sm font-medium text-forest hover:bg-alabaster transition-colors shadow-sm"
         >
           Book a Consultation
         </a>
@@ -173,7 +176,7 @@
           type="button"
           aria-label="Open Navigation Menu"
           aria-expanded="false"
-          class="lg:hidden p-2.5 rounded-xl border border-hairline text-forest hover:bg-alabaster"
+          class="xl:hidden p-2.5 rounded-xl border border-white/25 text-ivory hover:bg-white/10"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
@@ -183,33 +186,33 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-hairline bg-ivory px-6 py-5 space-y-2.5">
-      <a href="#overview" data-nav-view="home" data-nav-target="top" class="block py-2 text-sm font-semibold text-forest">
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-white/10 bg-[#214E4B] px-6 py-5 space-y-2.5">
+      <a href="#overview" data-nav-view="home" data-nav-target="top" class="block py-2 text-sm font-semibold text-ivory">
         Overview — Advisory Practice
       </a>
-      <a href="#first-step" data-nav-view="home" data-nav-target="first-step" class="block py-2 text-sm text-stone hover:text-forest">
+      <a href="#first-step" data-nav-view="home" data-nav-target="first-step" class="block py-2 text-sm text-ivory/75 hover:text-ivory">
         Where to Begin (First-Meeting Readiness)
       </a>
-      <a href="#services" data-nav-view="home" data-nav-target="services" class="block py-2 text-sm text-stone hover:text-forest">
+      <a href="#services" data-nav-view="home" data-nav-target="services" class="block py-2 text-sm text-ivory/75 hover:text-ivory">
         Four Disciplines (Insurance First)
       </a>
-      <a href="#products" data-nav-view="products" class="block py-2 text-sm font-semibold text-gold">
+      <a href="#products" data-nav-view="products" class="block py-2 text-sm font-semibold text-goldLight">
         Investment Products &amp; RRSP at Retirement →
       </a>
-      <a href="#about" data-nav-view="home" data-nav-target="about" class="block py-2 text-sm text-stone hover:text-forest">
+      <a href="#about" data-nav-view="home" data-nav-target="about" class="block py-2 text-sm text-ivory/75 hover:text-ivory">
         About Corie &amp; How We Work
       </a>
-      <a href="/blog" class="block py-2 text-sm text-stone hover:text-forest">
+      <a href="/blog" class="block py-2 text-sm text-ivory/75 hover:text-ivory">
         Blog
       </a>
-      <a href="#faq" data-nav-view="home" data-nav-target="faq" class="block py-2 text-sm text-stone hover:text-forest">
+      <a href="#faq" data-nav-view="home" data-nav-target="faq" class="block py-2 text-sm text-ivory/75 hover:text-ivory">
         Common Questions (FAQ)
       </a>
-      <div class="pt-2 border-t border-hairline">
+      <div class="pt-2 border-t border-white/10">
         <a
           href="#contact"
           data-book-link="true"
-          class="inline-flex w-full items-center justify-center rounded-full bg-forest px-5 py-3 text-sm font-medium text-ivory"
+          class="inline-flex w-full items-center justify-center rounded-full bg-ivory px-5 py-3 text-sm font-medium text-forest"
         >
           Book a Consultation
         </a>
@@ -2044,17 +2047,17 @@
         const linkView = link.getAttribute("data-nav-view");
         if (linkView === "products") {
           if (targetView === "products") {
-            link.classList.add("bg-forest", "text-ivory", "border-forest");
-            link.classList.remove("bg-alabaster", "text-forest", "border-hairline");
+            link.classList.add("bg-ivory", "text-forest", "border-ivory");
+            link.classList.remove("bg-white/10", "text-ivory", "border-white/25");
           } else {
-            link.classList.remove("bg-forest", "text-ivory", "border-forest");
-            link.classList.add("bg-alabaster", "text-forest", "border-hairline");
+            link.classList.remove("bg-ivory", "text-forest", "border-ivory");
+            link.classList.add("bg-white/10", "text-ivory", "border-white/25");
           }
         } else {
           if (targetView === "home" && link.getAttribute("data-nav-target") === "top") {
-            link.classList.add("font-semibold", "text-forest");
+            link.classList.add("font-semibold", "text-ivory");
           } else {
-            link.classList.remove("font-semibold", "text-forest");
+            link.classList.remove("font-semibold", "text-ivory");
           }
         }
       });

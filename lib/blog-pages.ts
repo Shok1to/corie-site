@@ -63,38 +63,41 @@ const HEAD_ASSETS = `
 
 function header(active: 'blog'): string {
   const link = (href: string, label: string) =>
-    `<a href="${href}" class="hover:text-forest transition-colors">${label}</a>`;
+    `<a href="${href}" class="hover:text-ivory transition-colors">${label}</a>`;
   return `
-  <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-hairline">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
-      <a href="/" class="flex flex-col group focus:outline-none">
-        <span class="font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-forest leading-none">Corie Anne del Carmen</span>
-        <span class="text-[11px] uppercase tracking-[0.2em] text-gold mt-1 font-semibold">delcarmen.ca · Financial Advisory</span>
+  <header class="sticky top-0 z-40 bg-[#214E4B] backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3 group focus:outline-none">
+        <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-9 w-auto shrink-0" />
+        <span class="flex flex-col">
+          <span class="sm:whitespace-nowrap font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-ivory leading-none">Corie Anne del Carmen</span>
+          <span class="hidden sm:block sm:whitespace-nowrap text-[11px] uppercase tracking-[0.2em] text-[#B7CFCB] mt-1 font-semibold">delcarmen.ca · Financial Advisory</span>
+        </span>
       </a>
-      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-6 text-sm text-stone">
+      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-5 text-[13px] whitespace-nowrap text-ivory/75">
         ${link('/', 'Overview')}
         ${link('/#first-step', 'Where to Begin')}
         ${link('/#services', 'Four Disciplines')}
         ${link('/#products', 'Investment Products')}
         ${link('/#about', 'About &amp; Process')}
-        <a href="/blog" ${active === 'blog' ? 'aria-current="page"' : ''} class="font-semibold text-forest">Blog</a>
+        <a href="/blog" ${active === 'blog' ? 'aria-current="page"' : ''} class="font-semibold text-ivory">Blog</a>
         ${link('/#faq', 'FAQ')}
       </nav>
       <div class="flex items-center gap-2.5">
-        <a href="/#contact" class="inline-flex items-center justify-center rounded-full bg-forest px-5 py-2.5 text-xs sm:text-sm font-medium text-ivory hover:bg-forestHover transition-colors shadow-sm">Book a Consultation</a>
-        <button id="mobile-menu-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-xl border border-hairline text-forest hover:bg-alabaster">
+        <a href="/#contact" class="inline-flex items-center justify-center rounded-full bg-ivory px-5 py-2.5 text-xs sm:text-sm font-medium text-forest hover:bg-alabaster transition-colors shadow-sm">Book a Consultation</a>
+        <button id="mobile-menu-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false" class="xl:hidden p-2.5 rounded-xl border border-white/25 text-ivory hover:bg-white/10">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" /></svg>
         </button>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-hairline bg-ivory px-6 py-5 space-y-2.5">
-      <a href="/" class="block py-2 text-sm text-stone hover:text-forest">Overview</a>
-      <a href="/#first-step" class="block py-2 text-sm text-stone hover:text-forest">Where to Begin</a>
-      <a href="/#services" class="block py-2 text-sm text-stone hover:text-forest">Four Disciplines</a>
-      <a href="/#products" class="block py-2 text-sm text-stone hover:text-forest">Investment Products</a>
-      <a href="/#about" class="block py-2 text-sm text-stone hover:text-forest">About &amp; Process</a>
-      <a href="/blog" class="block py-2 text-sm font-semibold text-forest">Blog</a>
-      <a href="/#faq" class="block py-2 text-sm text-stone hover:text-forest">FAQ</a>
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-white/10 bg-[#214E4B] px-6 py-5 space-y-2.5">
+      <a href="/" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Overview</a>
+      <a href="/#first-step" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Where to Begin</a>
+      <a href="/#services" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Four Disciplines</a>
+      <a href="/#products" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Investment Products</a>
+      <a href="/#about" class="block py-2 text-sm text-ivory/75 hover:text-ivory">About &amp; Process</a>
+      <a href="/blog" class="block py-2 text-sm font-semibold text-ivory">Blog</a>
+      <a href="/#faq" class="block py-2 text-sm text-ivory/75 hover:text-ivory">FAQ</a>
     </div>
   </header>`;
 }
