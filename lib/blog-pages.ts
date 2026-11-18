@@ -66,11 +66,11 @@ function header(active: 'blog'): string {
     `<a href="${href}" class="hover:text-ivory transition-colors">${label}</a>`;
   return `
   <header class="sticky top-0 z-40 bg-forest backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
-      <a href="/" class="flex items-center gap-3 group focus:outline-none">
-        <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-9 w-auto shrink-0" />
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-3 sm:gap-4">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+        <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-8 sm:h-9 w-auto shrink-0" />
         <span class="flex flex-col">
-          <span class="sm:whitespace-nowrap font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-ivory leading-none">Corie Anne del Carmen</span>
+          <span class="whitespace-nowrap font-editorial text-[21px] sm:text-[26px] font-medium tracking-tight text-ivory leading-none">Corie Anne<br class="sm:hidden" /> del Carmen</span>
           <span class="hidden sm:block sm:whitespace-nowrap text-[11px] uppercase tracking-[0.2em] text-[#B7CFCB] mt-1 font-semibold">delcarmen.ca · Financial Advisory</span>
         </span>
       </a>
@@ -84,7 +84,7 @@ function header(active: 'blog'): string {
         ${link('/#faq', 'FAQ')}
       </nav>
       <div class="flex items-center gap-2.5">
-        <a href="/#contact" class="inline-flex items-center justify-center rounded-full bg-ivory px-5 py-2.5 text-xs sm:text-sm font-medium text-forest hover:bg-alabaster transition-colors shadow-sm">Book a Consultation</a>
+        <a href="/#contact" class="inline-flex items-center justify-center rounded-full bg-ivory px-3.5 sm:px-5 py-2.5 text-xs sm:text-sm font-medium text-forest hover:bg-alabaster transition-colors shadow-sm"><span class="min-[380px]:hidden">Book now</span><span class="hidden min-[380px]:inline">Book a Consultation</span></a>
         <button id="mobile-menu-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false" class="xl:hidden p-2.5 rounded-xl border border-white/25 text-ivory hover:bg-white/10">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" /></svg>
         </button>

@@ -91,17 +91,17 @@
        STICKY NAVIGATION HEADER (delcarmen.ca)
   ========================================================== -->
   <header class="sticky top-0 z-40 bg-forest backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-3 sm:gap-4">
       <!-- Brand Identity -->
       <a
         href="#overview"
         data-nav-view="home"
-        class="flex items-center gap-3 group focus:outline-none"
+        class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
       >
-        <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-9 w-auto shrink-0" />
+        <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-8 sm:h-9 w-auto shrink-0" />
         <span class="flex flex-col">
-          <span class="sm:whitespace-nowrap font-editorial text-2xl sm:text-[26px] font-medium tracking-tight text-ivory leading-none">
-            Corie Anne del Carmen
+          <span class="whitespace-nowrap font-editorial text-[21px] sm:text-[26px] font-medium tracking-tight text-ivory leading-none">
+            Corie Anne<br class="sm:hidden" /> del Carmen
           </span>
           <span class="hidden sm:block sm:whitespace-nowrap text-[11px] uppercase tracking-[0.2em] text-[#B7CFCB] mt-1 font-semibold">
             delcarmen.ca · Financial Advisory
@@ -167,9 +167,9 @@
         <a
           href="#contact"
           data-book-link="true"
-          class="inline-flex items-center justify-center rounded-full bg-ivory px-5 py-2.5 text-xs sm:text-sm font-medium text-forest hover:bg-alabaster transition-colors shadow-sm"
+          class="inline-flex items-center justify-center rounded-full bg-ivory px-3.5 sm:px-5 py-2.5 text-xs sm:text-sm font-medium text-forest hover:bg-alabaster transition-colors shadow-sm"
         >
-          Book a Consultation
+          <span class="min-[380px]:hidden">Book now</span><span class="hidden min-[380px]:inline">Book a Consultation</span>
         </a>
         <button
           id="mobile-menu-btn"
