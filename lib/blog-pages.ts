@@ -65,7 +65,7 @@ function header(active: 'blog'): string {
   const link = (href: string, label: string) =>
     `<a href="${href}" class="hover:text-ivory transition-colors">${label}</a>`;
   return `
-  <header class="sticky top-0 z-40 bg-[#214E4B] backdrop-blur-md border-b border-white/10">
+  <header class="sticky top-0 z-40 bg-forest backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
       <a href="/" class="flex items-center gap-3 group focus:outline-none">
         <img src="/assets/logo-mark-light.svg" alt="" width="36" height="40" class="h-9 w-auto shrink-0" />
@@ -90,7 +90,7 @@ function header(active: 'blog'): string {
         </button>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden xl:hidden border-t border-white/10 bg-[#214E4B] px-6 py-5 space-y-2.5">
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-white/10 bg-forest px-6 py-5 space-y-2.5">
       <a href="/" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Overview</a>
       <a href="/#first-step" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Where to Begin</a>
       <a href="/#services" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Four Disciplines</a>
@@ -103,24 +103,24 @@ function header(active: 'blog'): string {
 }
 
 const FOOTER = `
-  <footer class="border-t border-hairline bg-ivory py-12">
+  <footer class="border-t border-white/10 bg-forest py-12">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-6">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
-          <span class="font-editorial text-2xl font-medium text-forest">Corie Anne del Carmen</span>
-          <p class="text-xs text-stone mt-1">delcarmen.ca · 205 Placer Court, North York, Ontario M2H 3H9 · +1 (647) 285-2662</p>
+          <span class="font-editorial text-2xl font-medium text-ivory">Corie Anne del Carmen</span>
+          <p class="text-xs text-ivory/70 mt-1">delcarmen.ca · 205 Placer Court, North York, Ontario M2H 3H9 · +1 (647) 285-2662</p>
         </div>
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-stone">
-          <a href="/" class="hover:text-forest transition-colors">Overview</a>
-          <a href="/#services" class="hover:text-forest transition-colors">Four Disciplines</a>
-          <a href="/#products" class="text-forest font-semibold hover:text-gold transition-colors">Investment Products</a>
-          <a href="/blog" class="hover:text-forest transition-colors">Blog</a>
-          <a href="/#contact" class="hover:text-forest transition-colors">Book Consultation</a>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-ivory/75">
+          <a href="/" class="hover:text-ivory transition-colors">Overview</a>
+          <a href="/#services" class="hover:text-ivory transition-colors">Four Disciplines</a>
+          <a href="/#products" class="text-ivory font-semibold hover:text-goldLight transition-colors">Investment Products</a>
+          <a href="/blog" class="hover:text-ivory transition-colors">Blog</a>
+          <a href="/#contact" class="hover:text-ivory transition-colors">Book Consultation</a>
         </div>
       </div>
-      <div class="pt-5 border-t border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-stone/85 leading-relaxed">
+      <div class="pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-ivory/60 leading-relaxed">
         <p class="max-w-3xl"><strong>Educational Notice:</strong> Articles on delcarmen.ca are general information for educational purposes and do not constitute individualized financial, insurance, tax, legal, or investment advice.</p>
-        <p class="whitespace-nowrap font-medium text-stone">© 2026 Corie Anne del Carmen</p>
+        <p class="whitespace-nowrap font-medium text-ivory/75">© 2026 Corie Anne del Carmen</p>
       </div>
     </div>
   </footer>
