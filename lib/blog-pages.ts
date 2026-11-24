@@ -42,6 +42,8 @@ const HEAD_ASSETS = `
     .article > * + * { margin-top: 1.25rem; }
     .article h2 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2rem; line-height: 1.2; font-weight: 500; color: #1E352F; margin-top: 3rem; scroll-margin-top: 6rem; }
     .article h2 + * { margin-top: .9rem; }
+    .article h3 { font-size: 1.15rem; line-height: 1.4; font-weight: 600; color: #1E352F; margin-top: 2.25rem; }
+    .article h3 + * { margin-top: .6rem; }
     .article a { color: #1E352F; text-decoration: underline; text-decoration-color: #B5894C; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
     .article a:hover { color: #B5894C; }
     .article ul, .article ol { padding-left: 1.4rem; }
@@ -54,7 +56,8 @@ const HEAD_ASSETS = `
     .article table { width: 100%; border-collapse: collapse; font-size: .9375rem; line-height: 1.55; min-width: 34rem; }
     .article th { background: #F3EFE9; color: #1E352F; font-weight: 600; text-align: left; padding: .8rem 1rem; border-bottom: 1px solid #E5DFD5; }
     .article td { padding: .8rem 1rem; vertical-align: top; border-bottom: 1px solid #E5DFD5; }
-    .article tr:last-child td { border-bottom: 0; }
+    .article tr:last-child td, .article tr:last-child th { border-bottom: 0; }
+    .article tbody th { background: #fff; font-weight: 600; vertical-align: top; }
     .article .note { background: #F3EFE9; border-left: 3px solid #B5894C; border-radius: .5rem; padding: 1rem 1.25rem; font-size: .9375rem; line-height: 1.65; color: #5C5852; }
     .article .sources { font-size: .875rem; line-height: 1.6; color: #5C5852; }
     .article .sources li + li { margin-top: .4rem; }

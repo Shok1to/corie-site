@@ -29,7 +29,10 @@ const slugify = (text: string) =>
 
 const stripTags = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&');
 
-type Meta = Pick<Post, 'slug' | 'title' | 'description' | 'date'>;
+type Meta = Pick<Post, 'slug' | 'title' | 'description' | 'date'> & {
+  /** Only when the author states a reading time; otherwise it is counted from the text. */
+  readMinutes?: number;
+};
 
 function loadPost(meta: Meta, file: string): Post {
   const raw = fs.readFileSync(path.join(process.cwd(), 'lib/posts', file), 'utf8');
@@ -45,7 +48,8 @@ function loadPost(meta: Meta, file: string): Post {
   // The sources list is reference material, not reading time.
   const readable = raw.split('<h2>Sources</h2>')[0];
   const words = stripTags(readable).split(/\s+/).filter(Boolean).length;
-  return { ...meta, html, headings, readMinutes: Math.max(1, Math.ceil(words / WORDS_PER_MINUTE)) };
+  const counted = Math.max(1, Math.ceil(words / WORDS_PER_MINUTE));
+  return { ...meta, html, headings, readMinutes: meta.readMinutes ?? counted };
 }
 
 /**
@@ -54,6 +58,17 @@ function loadPost(meta: Meta, file: string): Post {
  */
 export function getPosts(): Post[] {
   return [
+    loadPost(
+      {
+        slug: 'building-wealth-is-only-half-the-plan',
+        title: 'Building Wealth Is Only Half the Plan: Why Protecting It Comes First',
+        description:
+          'Most conversations about personal finance start with growing your money. Far fewer ask what keeps that plan intact if life interrupts your ability to earn, and why protection should come first.',
+        date: '2026-11-24',
+        readMinutes: 5, // as stated in the author's draft
+      },
+      'building-wealth-is-only-half-the-plan.html',
+    ),
     loadPost(
       {
         slug: 'when-the-paycheque-stops',
