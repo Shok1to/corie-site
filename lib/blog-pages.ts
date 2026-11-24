@@ -80,7 +80,6 @@ function header(active: 'blog'): string {
         ${link('/#services', 'Four Disciplines')}
         ${link('/#products', 'Investment Products')}
         ${link('/#about', 'About &amp; Process')}
-        <a href="/blog" ${active === 'blog' ? 'aria-current="page"' : ''} class="font-semibold text-ivory">Blog</a>
         ${link('/#faq', 'FAQ')}
       </nav>
       <div class="flex items-center gap-2.5">
@@ -96,7 +95,6 @@ function header(active: 'blog'): string {
       <a href="/#services" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Four Disciplines</a>
       <a href="/#products" class="block py-2 text-sm text-ivory/75 hover:text-ivory">Investment Products</a>
       <a href="/#about" class="block py-2 text-sm text-ivory/75 hover:text-ivory">About &amp; Process</a>
-      <a href="/blog" class="block py-2 text-sm font-semibold text-ivory">Blog</a>
       <a href="/#faq" class="block py-2 text-sm text-ivory/75 hover:text-ivory">FAQ</a>
     </div>
   </header>`;
